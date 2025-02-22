@@ -10,10 +10,36 @@ using namespace std;
 struct NhanVien {
     string maNV;
     string hoTen;
-    int luongCB;
+    long luongCB;
     int soNgayLam;
     long luongHangThang;
 };
+
+/* Hàm tự động tăng kích thước mảng và append giá trị mới
+ Input: Mảng cần tăng và thêm giá trị, kích thước mảng, giá trị sẽ thêm vào
+ */
+void append(NhanVien*& arr, int& size, NhanVien value) {
+    // Tạo mảng mới với kích thước lớn hơn
+    NhanVien* newArr = new NhanVien[size + 1];
+
+    // Sao chép dữ liệu từ mảng cũ sang mảng mới
+    for (int i = 0; i < size; i++) {
+        newArr[i] = arr[i];
+    }
+
+    // Thêm phần tử mới vào cuối mảng
+    newArr[size] = value;
+
+    // Giải phóng bộ nhớ của mảng cũ
+    delete[] arr;
+
+    // Trỏ arr sang mảng mới
+    arr = newArr;
+
+    // Tăng kích thước mảng
+    size++;
+}
+
 
 /* Hàm tính lương hàng tháng
  Input: luongCB, so ngay làm
@@ -64,32 +90,123 @@ void taoDanhSachNV(NhanVien * &arrNV, int size) {
     }
 }
 
+void printNV(NhanVien nv) {
+    cout << "MA NV: " <<nv.maNV << endl;
+    cout << "Ho Ten: " << nv.hoTen << endl;
+    cout << "Luong CB: " << nv.luongCB << endl;
+    cout << "So Ngay Lam: " <<nv.soNgayLam << endl;
+    cout << "Luong HT: " << nv.luongHangThang << endl;
+    cout << endl;
+}
+
 /* Hàm in danh sách Nhân viên
 Input: mảng nhân viên, kích thước
  */
 void printDanhSachNV(NhanVien* arrNV, int size) {
     for (int i = 0; i < size; i++) {
         cout <<i<<" -----------------" << endl;
-        cout << "MA NV: " <<arrNV[i].maNV << endl;
-        cout << "Ho Ten: " << arrNV[i].hoTen << endl;
-        cout << "Luong CB: " << arrNV[i].luongCB << endl;
-        cout << "So Ngay Lam: " <<arrNV[i].soNgayLam << endl;
-        cout << "Luong HT: " << arrNV[i].luongHangThang << endl;
-        cout << endl;
+        printNV(arrNV[i]);
     }
 }
+
+
 
 /* Hàm tính tổng lương NV
 Input: mảng nhân viên, kích thước mảng
 Output: tongLuongNV trong công ty
  */
 long tongLuongNVCongTy(NhanVien* arrNV, int size) {
-    double sum = 0;
+    long sum = 0;
     for (int i = 0; i < size; i++) {
         sum += arrNV[i].luongHangThang;
     }
     return sum;
 }
+
+/* Hàm tính tổng lương cua NV < 5000000
+Input: mảng nhân viên, kích thước mảng
+Output: tongLuongNV trong công ty
+ */
+long tongLuongNVNhoHon5Tr(NhanVien* arrNV, int size) {
+    long sum = 0;
+    for (int i = 0; i < size; i++) {
+        if (arrNV[i].luongHangThang < 5000000) {
+            sum += arrNV[i].luongHangThang;
+        }
+    }
+    return sum;
+}
+
+NhanVien* timNVTheoMaNV(NhanVien* arrNV, int size, string maNV) {
+    NhanVien* result = NULL;
+    for (int i = 0; i < size; i++) {
+        if (arrNV[i].maNV == maNV) {
+            result = &arrNV[i];
+            return result;
+        }
+    }
+}
+
+/* Hàm tìm lương HT nhỏ nhất trong danh sách nhân viên
+ */
+long luongHTMinTrongDanhSachNV(NhanVien* arrNV, int size) {
+    long minLuongHT = arrNV[0].luongHangThang;
+    for (int i = 0; i < size; i++) {
+        if (arrNV[i].luongHangThang < minLuongHT) {
+            minLuongHT = arrNV[i].luongHangThang;
+        }
+    }
+    return minLuongHT;
+}
+
+/* Hàm tìm lương CB lớn nhất trong danh sách nhân viên
+ */
+long luongCBMaxTrongDanhSachNV(NhanVien* arrNV, int size) {
+    long maxLuongCB = arrNV[0].luongCB;
+    for (int i = 0; i < size; i++) {
+        if (arrNV[i].luongHangThang > maxLuongCB) {
+            maxLuongCB = arrNV[i].luongHangThang;
+        }
+    }
+    return maxLuongCB;
+}
+
+/* Hàm xuất list nhân viên lương hàng tháng bằng nhau thấp nhất
+ */
+void xuatNVLuongHTThapNhat(NhanVien* arrNV, int size) {
+    long minLuongHT = luongHTMinTrongDanhSachNV(arrNV, size);
+    int sizeArrNVMinLuong = 0;
+    NhanVien* arrNVMinLuong = new NhanVien[size];
+    for (int i = 0; i < size; i++) {
+        if (arrNV[i].luongHangThang == minLuongHT) {
+            append(arrNVMinLuong, sizeArrNVMinLuong, arrNV[i]);
+        }
+    }
+
+    for (int i = 0; i < size; i++) {
+        if (arrNVMinLuong[i].maNV != "") {
+            printNV(arrNVMinLuong[i]);
+        }
+    }
+}
+
+void xuatNVLuongCBCaoNhat(NhanVien* arrNV, int size) {
+    long minLuongHT = luongCBMaxTrongDanhSachNV(arrNV, size);
+    int sizeArrNVMaxLuongCB = 0;
+    NhanVien* arrNVMaxLuongCB = new NhanVien[size];
+    for (int i = 0; i < size; i++) {
+        if (arrNV[i].luongHangThang == minLuongHT) {
+            append(arrNVMaxLuongCB, sizeArrNVMaxLuongCB, arrNV[i]);
+        }
+    }
+
+    for (int i = 0; i < size; i++) {
+        if (arrNVMaxLuongCB[i].maNV != "") {
+            printNV(arrNVMaxLuongCB[i]);
+        }
+    }
+}
+
 
 int main() {
     srand(time(0));
@@ -101,7 +218,29 @@ int main() {
     cout << "Tổng lương toàn bộ NV trong công ty" << endl;
     cout << tongLuongNVCongTy(arrNV, size) << endl;
 
-    delete[] arrNV;
-    arrNV = NULL;
+    cout << "Tổng lương toàn bộ NV trong công ty < 5000000" << endl;
+    cout << tongLuongNVNhoHon5Tr(arrNV, size) << endl;
+
+    cout << "Tìm nhân viên theo mã 0009" << endl;
+    NhanVien* nv = timNVTheoMaNV(arrNV,size,"0009");
+    if (nv != NULL) {
+        cout << "Tìm có nhân viên: " << nv->hoTen << endl;
+        cout << "Mã nhân viên: " << nv->maNV << endl;
+    } else {
+        cout << "Ko co"<< endl;
+    }
+
+    cout << endl;
+    cout << "Tìm các nhân viên có lương hàng tháng thấp nhất" << endl;
+    xuatNVLuongHTThapNhat(arrNV, size);
+
+    cout << endl;
+    cout << "Tìm các nhân viên có lương CB tháng cao nhất" << endl;
+    xuatNVLuongCBCaoNhat(arrNV, size);
+
+    // delete[] arrNV;
+    // delete nv;
+    // arrNV = NULL;
+    // nv = NULL;
     return 0;
 }
