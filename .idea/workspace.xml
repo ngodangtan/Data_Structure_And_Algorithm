@@ -9,9 +9,9 @@
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeProjectFlavorService">
     <option name="flavorId" value="CMakePlainProjectFlavor" />
   </component>
@@ -30,30 +30,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98563005-dcc5-40eb-9bdb-2752c4935ff0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Bai_tap_buoi_01/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bai_tap_buoi_01/.idea/Bai_tap_buoi_01.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bai_tap_buoi_01/.idea/editor.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bai_tap_buoi_01/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bai_tap_buoi_01/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bai_tap_buoi_01/Bai_01" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bai_tap_buoi_01/Bai_01.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Buoi01_17_2.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Buoi01_17_2/.idea/Buoi01_17_2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Buoi01_17_2/.idea/editor.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Buoi01_17_2/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Buoi01_17_2/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Buoi01_17_2/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Buoi01_17_2/con_tro_NULL.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Buoi01_17_2/demo_cap_phat_dong.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Buoi01_17_2/demo_struct" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Buoi01_17_2/demo_struct.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Buoi01_17_2/huong_dan_qlnv.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Buoi01_17_2/opperator" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Buoi01_17_2/opperator.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/con_tro_NULL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_cap_phat_dong" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/opperator" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bai_tap/Buoi01/Bai_02.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2025-02-22T08-00-50-0409.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Data_Structure_And_Algorithm" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Data_Structure_And_Algorithm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,9 +59,9 @@
     <option name="minorVersion" value="3.2" />
     <option name="productBranch" value="Classic" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2tO6mA7vb6r4vphqrJi63OS4iXE" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -92,18 +78,17 @@
     "RunOnceActivity.west.config.association.type.startup.service": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "refactor__project",
+    "git-widget-placeholder": "Bai__tap__buoi1__bai02",
     "last_opened_file_path": "/Users/felixngo/Data_Structure_And_Algorithm",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Data_Structure_And_Algorithm" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Data_Structure_And_Algorithm" TARGET_NAME="Data_Structure_And_Algorithm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Data_Structure_And_Algorithm" RUN_TARGET_NAME="Data_Structure_And_Algorithm">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -119,6 +104,8 @@
       <option name="presentableId" value="Default" />
       <updated>1740210929827</updated>
       <workItem from="1740210930919" duration="25000" />
+      <workItem from="1740212082405" duration="16000" />
+      <workItem from="1740212125172" duration="687000" />
     </task>
     <servers />
   </component>
