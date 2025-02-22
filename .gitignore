@@ -1,0 +1,13 @@
+# Ignore JetBrains IDE (CLion, IntelliJ, etc.)
+.idea/
+
+# Ignore CMake build files
+cmake-build-debug/
+*.ninja_deps
+*.ninja_log
+
+# Ignore JSON API reply files
+*.json
+
+# Ignore log files
+*.log
