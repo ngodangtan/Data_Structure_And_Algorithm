@@ -11,3 +11,10 @@ cmake-build-debug/
 
 # Ignore log files
 *.log
+
+# Ignore CMake build files
+cmake-build-debug/
+cmake-build-debug/.ninja_deps
+cmake-build-debug/.ninja_log
+cmake-build-debug/CMakeFiles/
+cmake-build-debug/Testing/
