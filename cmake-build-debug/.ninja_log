@@ -1,14 +1,10 @@
 # ninja log v6
-587	617	1740212090296344412	Data_Structure_And_Algorithm	3dd64c1e5efca17b
+403	431	1740213686193655967	Data_Structure_And_Algorithm	626de2c7722c0c80
 3	414	1740210945854449125	CMakeFiles/Data_Structure_And_Algorithm.dir/main.cpp.o	53aec21c18b2ceb3
-2	61	1740212622254098453	build.ninja	a7001285c28b4d6a
+3	66	1740213941403394036	build.ninja	a7001285c28b4d6a
 1	587	1740212089710390610	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi01/Bai_01.cpp.o	55c8bca5bf422b
-3	66	1740212622254098453	build.ninja	a7001285c28b4d6a
-0	572	1740212622269239816	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi01/Bai_02.cpp.o	a7bb25549c8582fa
-573	657	1740212622841578806	Data_Structure_And_Algorithm	626de2c7722c0c80
-3	460	1740212688408745508	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi01/Bai_02.cpp.o	a7bb25549c8582fa
-460	490	1740212688865448064	Data_Structure_And_Algorithm	626de2c7722c0c80
-3	442	1740212696802851662	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi01/Bai_02.cpp.o	a7bb25549c8582fa
-443	472	1740212697242399667	Data_Structure_And_Algorithm	626de2c7722c0c80
-3	454	1740212752547278982	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi01/Bai_02.cpp.o	a7bb25549c8582fa
-454	484	1740212752998135645	Data_Structure_And_Algorithm	626de2c7722c0c80
+3	403	1740213685793607236	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi01/Bai_02.cpp.o	a7bb25549c8582fa
+4	482	1740214755106093036	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi01/Bai_02.cpp.o	a7bb25549c8582fa
+482	514	1740214755584164487	Data_Structure_And_Algorithm	626de2c7722c0c80
+4	565	1740214786990192488	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi01/Bai_02.cpp.o	a7bb25549c8582fa
+565	644	1740214787552065229	Data_Structure_And_Algorithm	626de2c7722c0c80
