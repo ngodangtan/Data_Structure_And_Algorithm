@@ -12,26 +12,14 @@ struct NhanVien {
     string hoTen;
     int luongCB;
     int soNgayLam;
-    int luongHangThang;
+    long luongHangThang;
 };
-
-/* Hàm làm tròn 2 chữ số sau dau thap phan.
-Input:
-+ double n
-Output:
-+ return int value
-Exp: n = 12.33329 => 12.33
-n = 12.339 => 12.34
- */
-double lamTron2ChuSo(double num) {
-    return (int) (num * 100 + 0.5) / 100.0;
-}
 
 /* Hàm tính lương hàng tháng
  Input: luongCB, so ngay làm
  Output: số tiền lương hàng tháng
  */
-int tinhLuongHT(int luongCB, int soNgayLam) {
+long tinhLuongHT(int luongCB, int soNgayLam) {
     int result = luongCB + soNgayLam * 180000;
     if (result > 8000000) {
        double thuong = result * 1.05;
@@ -72,7 +60,7 @@ void taoDanhSachNV(NhanVien * &arrNV, int size) {
         } else {
             arrNV[i].luongCB = 4000000;
         }
-       arrNV[i].luongHangThang = tinhLuongHT(arrNV[i].luongCB, size);
+       arrNV[i].luongHangThang = tinhLuongHT(arrNV[i].luongCB, arrNV[i].soNgayLam);
     }
 }
 
@@ -91,12 +79,16 @@ void printDanhSachNV(NhanVien* arrNV, int size) {
     }
 }
 
-double tongLuongNV(NhanVien* arrNV, int size) {
+/* Hàm tính tổng lương NV
+Input: mảng nhân viên, kích thước mảng
+Output: tongLuongNV trong công ty
+ */
+long tongLuongNVCongTy(NhanVien* arrNV, int size) {
     double sum = 0;
     for (int i = 0; i < size; i++) {
         sum += arrNV[i].luongHangThang;
     }
-    return lamTron2ChuSo(sum);
+    return sum;
 }
 
 int main() {
@@ -107,7 +99,7 @@ int main() {
     printDanhSachNV(arrNV, size);
 
     cout << "Tổng lương toàn bộ NV trong công ty" << endl;
-    cout << tongLuongNV(arrNV, size) << endl;
+    cout << tongLuongNVCongTy(arrNV, size) << endl;
 
     delete[] arrNV;
     arrNV = NULL;
