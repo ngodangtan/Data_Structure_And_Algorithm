@@ -292,7 +292,7 @@ int main() {
   daoNguocMang(arr,n);
   printMang(arr,n);
 
-  delete arr;
-  arr = NULL;
+  // delete[] arr;
+  // arr = NULL;
   return 0;
 }
