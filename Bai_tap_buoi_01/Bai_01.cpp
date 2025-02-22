@@ -43,6 +43,42 @@ void printEvenValue(double arr[], int size) {
     }
 }
 
+/* Hàm in các phần tử âm có trong mảng
+Input:
++ double arr, size array
+ */
+void printSoAmTrongMang(double arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] < 0) {
+            cout << arr[i] << "; ";
+        }
+    }
+}
+
+void printPhanTuTrongKhoang(double arr[], int size, double x, double y) {
+    bool isNotTrongKhoang = true;
+    for (int i = 0; i < size; i++) {
+        if (arr[i] >= x && arr[i] <= y) {
+            cout << arr[i] << "; ";
+            isNotTrongKhoang = false;
+        }
+    }
+
+    if (isNotTrongKhoang == true) {
+        cout << "Không có giá trị nào trong khoảng " << x << ", " << y << endl;
+    }
+}
+
+/* Hàm đảo ngược (reversed) mảng hiện tại
+ Input: arr, size, arr sẽ bị đảo ngược
+ công thức đảo ngược mảng: arr[i] = arr[size-1-i]
+ */
+void daoNguocMang(double arr[], int size, double arrReversed[]) {
+    for (int i = 0; i < size; i++) {
+        arrReversed[i] = arr[size-1-i];
+    }
+}
+
 /* Hàm tính tổng giá trị có trong mảng.
 Input:
 + double array, int size
@@ -86,6 +122,10 @@ int soLanXuatHien(double arr[], int size, double x) {
     return count;
 }
 
+/* Hàm tìm phần tử nhỏ nhất trong mảng.
+Input:
++ double array, int size, double minValue
+ */
 void phanTuNhoNhatTrongMang(double arr[], int size, double &minValue) {
     if (size == 0) {
         cout << "Mảng không có giá trị nào" << endl;
@@ -97,6 +137,20 @@ void phanTuNhoNhatTrongMang(double arr[], int size, double &minValue) {
             minValue = arr[i];
         }
     }
+}
+
+/* Hàm đếm số lượng phần tử trong đoạn [x,y]
+ Input: double arr[], size mảng, đoạn x,y
+ Output: int value số lượng phần tử
+ */
+int demSoLuongPhanTuTrongKhoang(double arr[], int size, double x, double y) {
+    int count = 0;
+    for (int i = 0; i < size; i++) {
+        if (arr[i] >=x && arr[i] <= y) {
+            count++;
+        }
+    }
+    return  count;
 }
 
 /* Tạo giá trị ngẫu nhiên a[i] (số thực, 2 chữ số sau dấu chấm) thuộc khoảng (-268; 339). Số lượng (n) thuộc đoạn [10; 20].
@@ -121,7 +175,7 @@ void autoArr(double a[], int &n) {
 
 
 int main() {
-    double a[20] = {};
+    double a[20], arrReversed[20];
     int n = 0;
     double kqTich,kqTong,giaTriCanTim,minValue;
 
@@ -151,5 +205,19 @@ int main() {
 
     cout << "Câu 7 : Tìm phần tử nhỏ nhất trong mảng" << endl;
     phanTuNhoNhatTrongMang(a,n,minValue);
+
+    cout << "Câu 8: Tạo một mảng đảo ngược" << endl;
+    daoNguocMang(a,n,arrReversed);
+    printArray(arrReversed,n);
+
+    cout << "Câu 9: In các số âm trong mảng" << endl;
+    printSoAmTrongMang(a,n);
+    cout << endl;
+
+    cout << "Câu 10: Số lượng phần tử các giá trị trong đoạn [x,y]" << endl;
+    cout << demSoLuongPhanTuTrongKhoang(a,n,2,10) << endl;
+
+    cout << "Câu 11: In giá trị trong mảng thuộc đoạn [x,y]" << endl;
+    printPhanTuTrongKhoang(a,n,2,10);
     return 0;
 }
