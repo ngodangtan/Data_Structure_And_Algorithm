@@ -15,6 +15,18 @@ struct NhanVien {
     int luongHangThang;
 };
 
+/* Hàm làm tròn 2 chữ số sau dau thap phan.
+Input:
++ double n
+Output:
++ return int value
+Exp: n = 12.33329 => 12.33
+n = 12.339 => 12.34
+ */
+double lamTron2ChuSo(double num) {
+    return (int) (num * 100 + 0.5) / 100.0;
+}
+
 /* Hàm tính lương hàng tháng
  Input: luongCB, so ngay làm
  Output: số tiền lương hàng tháng
@@ -64,6 +76,9 @@ void taoDanhSachNV(NhanVien * &arrNV, int size) {
     }
 }
 
+/* Hàm in danh sách Nhân viên
+Input: mảng nhân viên, kích thước
+ */
 void printDanhSachNV(NhanVien* arrNV, int size) {
     for (int i = 0; i < size; i++) {
         cout <<i<<" -----------------" << endl;
@@ -76,11 +91,25 @@ void printDanhSachNV(NhanVien* arrNV, int size) {
     }
 }
 
+double tongLuongNV(NhanVien* arrNV, int size) {
+    double sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += arrNV[i].luongHangThang;
+    }
+    return lamTron2ChuSo(sum);
+}
+
 int main() {
     srand(time(0));
     int size = 10;
     NhanVien *arrNV = new NhanVien[size];
     taoDanhSachNV(arrNV,size);
     printDanhSachNV(arrNV, size);
+
+    cout << "Tổng lương toàn bộ NV trong công ty" << endl;
+    cout << tongLuongNV(arrNV, size) << endl;
+
+    delete[] arrNV;
+    arrNV = NULL;
     return 0;
 }
