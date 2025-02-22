@@ -54,11 +54,10 @@ void taoDanhSachNV(NhanVien * &arrNV, int size) {
     for (int i = 0; i < size; i++) {
         arrNV[i].maNV = "000" + to_string(i);
         arrNV[i].hoTen = "Nguen Van " + taoRandomString(2);
+        arrNV[i].soNgayLam = rand() % 30 + 1;
         if (i%2 == 0) {
-            arrNV[i].soNgayLam = 25;
             arrNV[i].luongCB = 6000000;
         } else {
-            arrNV[i].soNgayLam = 30;
             arrNV[i].luongCB = 4000000;
         }
        arrNV[i].luongHangThang = tinhLuongHT(arrNV[i].luongCB, size);
@@ -78,6 +77,7 @@ void printDanhSachNV(NhanVien* arrNV, int size) {
 }
 
 int main() {
+    srand(time(0));
     int size = 10;
     NhanVien *arrNV = new NhanVien[size];
     taoDanhSachNV(arrNV,size);
