@@ -176,7 +176,7 @@ void autoArr(double a[], int &n) {
 
 int main() {
     double a[20], arrReversed[20];
-    int n = 0;
+    int n = 0; // kích thước mảng
     double kqTich,kqTong,giaTriCanTim,minValue;
 
     //---Bai 01----
