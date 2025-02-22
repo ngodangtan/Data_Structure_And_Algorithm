@@ -90,6 +90,9 @@ void taoDanhSachNV(NhanVien * &arrNV, int size) {
     }
 }
 
+/* Hàm in chi tiết nhân viên
+ Input: truyền vào đối tượng nhân viên
+ */
 void printNV(NhanVien nv) {
     cout << "MA NV: " <<nv.maNV << endl;
     cout << "Ho Ten: " << nv.hoTen << endl;
@@ -137,6 +140,9 @@ long tongLuongNVNhoHon5Tr(NhanVien* arrNV, int size) {
     return sum;
 }
 
+/* Hàm tìm nhân viên theo mã NV
+ Input: truyền vào mảng nhân viên, kích thước mảng, và mã nhân viên cần tìm
+ */
 NhanVien* timNVTheoMaNV(NhanVien* arrNV, int size, string maNV) {
     NhanVien* result = NULL;
     for (int i = 0; i < size; i++) {
@@ -148,6 +154,7 @@ NhanVien* timNVTheoMaNV(NhanVien* arrNV, int size, string maNV) {
 }
 
 /* Hàm tìm lương HT nhỏ nhất trong danh sách nhân viên
+Input: mảng nhân viên, kích thước mảng
  */
 long luongHTMinTrongDanhSachNV(NhanVien* arrNV, int size) {
     long minLuongHT = arrNV[0].luongHangThang;
@@ -160,6 +167,7 @@ long luongHTMinTrongDanhSachNV(NhanVien* arrNV, int size) {
 }
 
 /* Hàm tìm lương CB lớn nhất trong danh sách nhân viên
+Input: mảng nhân viên, kích thước mảng
  */
 long luongCBMaxTrongDanhSachNV(NhanVien* arrNV, int size) {
     long maxLuongCB = arrNV[0].luongCB;
@@ -172,6 +180,7 @@ long luongCBMaxTrongDanhSachNV(NhanVien* arrNV, int size) {
 }
 
 /* Hàm xuất list nhân viên lương hàng tháng bằng nhau thấp nhất
+ Input: mảng nhân viên, kích thước mảng
  */
 void xuatNVLuongHTThapNhat(NhanVien* arrNV, int size) {
     long minLuongHT = luongHTMinTrongDanhSachNV(arrNV, size);
@@ -190,6 +199,9 @@ void xuatNVLuongHTThapNhat(NhanVien* arrNV, int size) {
     }
 }
 
+/* Hàm xuất các nhân viên có lương cơ bản cao nhất
+Input: mảng nhân viên, kích thước mảng
+ */
 void xuatNVLuongCBCaoNhat(NhanVien* arrNV, int size) {
     long maxLuongCB = luongCBMaxTrongDanhSachNV(arrNV, size);
     int sizeArrNVMaxLuongCB = 0;
