@@ -24,9 +24,23 @@ Input:
  */
 void printArray(double arr[], int size) {
     for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
+        cout << arr[i] << "; ";
     }
     cout << endl;
+}
+
+/* Hàm in các phần tử chẵn có trong mảng
+ Lưu ý: chẵn-lẻ dựa vào giá trị nguyên của số thực
+Input:
++ double arr, size array
+ */
+void printEvenValue(double arr[], int size) {
+    cout << "Các phần tử chẵn có trong mảng" << endl;
+    for (int i = 0; i < size; i++) {
+        if ((int)arr[i] % 2 == 0) {
+            cout << arr[i] << "; ";
+        }
+    }
 }
 
 /* Hàm tính tổng giá trị có trong mảng.
@@ -72,6 +86,19 @@ int soLanXuatHien(double arr[], int size, double x) {
     return count;
 }
 
+void phanTuNhoNhatTrongMang(double arr[], int size, double &minValue) {
+    if (size == 0) {
+        cout << "Mảng không có giá trị nào" << endl;
+    }
+
+    minValue = arr[0];
+    for (int i = 0; i < size; i++) {
+        if (arr[i] < minValue) {
+            minValue = arr[i];
+        }
+    }
+}
+
 /* Tạo giá trị ngẫu nhiên a[i] (số thực, 2 chữ số sau dấu chấm) thuộc khoảng (-268; 339). Số lượng (n) thuộc đoạn [10; 20].
 Công thức: giá trị ngẫu nhiên = rand()%(max-min) + min
 Input:
@@ -96,23 +123,33 @@ void autoArr(double a[], int &n) {
 int main() {
     double a[20] = {};
     int n = 0;
+    double kqTich,kqTong,giaTriCanTim,minValue;
+
     //---Bai 01----
     cout << "---------Bai 01---------" << endl;
     cout << "Cau 1: Tao mang ngau nhien mang" << endl;
     autoArr(a, n);
+
     cout << "Cau 2: In mang vua tao" << endl;
     printArray(a,n);
+
     cout << "Cau 3: Tinh tong gia tri trong mang" << endl;
     cout << sumArr(a,n) << endl;
+
     cout << "Cau 4: Tinh tich gia tri trong mang" << endl;
-    double kqTich,kqTong;
     tichVaTongTrongMang(a,n,kqTich,kqTong);
     cout << "Ket qua tich: " << lamTron2ChuSo(kqTich) << endl;
     cout << "Ket qua tong: " << lamTron2ChuSo(kqTong) << endl;
+
     cout << "Cau 5: Dem gia tri x bat ky" << endl;
     cout << "Vui long nhap gia tri x bat ky: " << endl;
-    double x;
-    cin >> x;
-    cout << "Số lần xuất hiện gía trị x trong mang là: " << soLanXuatHien(a,n,x) << " lần" << endl;
+    cin >> giaTriCanTim;
+    cout << "Số lần xuất hiện gía trị x trong mang là: " << soLanXuatHien(a,n,giaTriCanTim) << " lần" << endl;
+
+    cout << "Cau 6: In phần tử chẵn có trong mảng (chẵn-lẻ dựa vào giá trị nguyên của số thực)" << endl;
+    printEvenValue(a,n);
+
+    cout << "Câu 7 : Tìm phần tử nhỏ nhất trong mảng" << endl;
+    phanTuNhoNhatTrongMang(a,n,minValue);
     return 0;
 }
