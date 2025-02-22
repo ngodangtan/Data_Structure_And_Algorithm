@@ -164,8 +164,8 @@ long luongHTMinTrongDanhSachNV(NhanVien* arrNV, int size) {
 long luongCBMaxTrongDanhSachNV(NhanVien* arrNV, int size) {
     long maxLuongCB = arrNV[0].luongCB;
     for (int i = 0; i < size; i++) {
-        if (arrNV[i].luongHangThang > maxLuongCB) {
-            maxLuongCB = arrNV[i].luongHangThang;
+        if (arrNV[i].luongCB > maxLuongCB) {
+            maxLuongCB = arrNV[i].luongCB;
         }
     }
     return maxLuongCB;
@@ -191,11 +191,11 @@ void xuatNVLuongHTThapNhat(NhanVien* arrNV, int size) {
 }
 
 void xuatNVLuongCBCaoNhat(NhanVien* arrNV, int size) {
-    long minLuongHT = luongCBMaxTrongDanhSachNV(arrNV, size);
+    long maxLuongCB = luongCBMaxTrongDanhSachNV(arrNV, size);
     int sizeArrNVMaxLuongCB = 0;
     NhanVien* arrNVMaxLuongCB = new NhanVien[size];
     for (int i = 0; i < size; i++) {
-        if (arrNV[i].luongHangThang == minLuongHT) {
+        if (arrNV[i].luongCB == maxLuongCB) {
             append(arrNVMaxLuongCB, sizeArrNVMaxLuongCB, arrNV[i]);
         }
     }
