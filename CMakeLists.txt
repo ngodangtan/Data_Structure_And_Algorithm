@@ -3,4 +3,4 @@ project(Data_Structure_And_Algorithm)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Data_Structure_And_Algorithm Bai_tap/Buoi01/Bai_01.cpp)
+add_executable(Data_Structure_And_Algorithm Bai_tap/Buoi01/Bai_02.cpp)
