@@ -51,11 +51,20 @@ void addTail(List& l, Node* p) {
   }
 }
 
-void printList(List l) {
+void printListFor(List l) {
   for (Node* p = l.pHead; p != NULL; p = p->pNext) {
     cout << p->data << " ";
   }
     cout << endl << endl;
+}
+
+void printListWhile(List l) {
+  Node* p = l.pHead;
+  while (p != NULL) {
+    cout << p->data << " ";
+    p = p->pNext;
+  }
+  cout << endl << endl;
 }
 
 int main() {
@@ -70,7 +79,8 @@ int main() {
   addHead(l,p2);
 
   addTail(l,p3);
-  printList(l);
+  printListFor(l);
+  printListWhile(l);
 
 //  Node* p = new Node;
 //  p->data = 10;
