@@ -102,6 +102,7 @@ int main() {
   printListFor(l);
   printListWhile(l);
   cout << "Test: Tim(10)_(1): " << timGiaTri(l,10) << endl;
+  cout << "Test: Tim(29)_(0): " << timGiaTri(l,29) << endl;
 
 //  Node* p = new Node;
 //  p->data = 10;
