@@ -31,13 +31,46 @@ void initList(List& l) {
   l.pTail = NULL;
 }
 
+void addHead(List& l, Node* p) {
+  if (l.pHead == NULL) {
+    l.pHead = p;
+    l.pTail = p;
+  } else {
+    p->pNext = l.pHead;
+    l.pHead = p;
+  }
+}
+
+void addTail(List& l, Node* p) {
+  if (l.pHead == NULL) {
+    l.pHead = p;
+    l.pTail = p;
+  } else {
+    l.pTail->pNext = p;
+    l.pTail = p;
+  }
+}
+
+void printList(List l) {
+  for (Node* p = l.pHead; p != NULL; p = p->pNext) {
+    cout << p->data << " ";
+  }
+    cout << endl << endl;
+}
+
 int main() {
-  Node* p = initNode(10);
-  Node* p1 = initNode(79);
+  Node* p1 = initNode(10);
+  Node* p2 = initNode(79);
   Node* p3 = initNode(39);
 
   List l;
   initList(l); //Danh sách rỗng
+
+  addHead(l,p1);
+  addHead(l,p2);
+
+  addTail(l,p3);
+  printList(l);
 
 //  Node* p = new Node;
 //  p->data = 10;
