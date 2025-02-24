@@ -84,6 +84,20 @@ bool timGiaTri(List l, int value) {
   return false;
 }
 
+/* Yêu cầu: Viết hàm đếm giá trị chẵn có trong List ?
+Input:
++ l: List
+Output:
++  return int
+ */
+int demGiaTri(List l, int value) {
+  for (Node* p = l.pHead; p != NULL; p = p->pNext) {
+    // TODO: xử lý
+  }
+  return 0;
+}
+
+
 int main() {
   Node* p1 = initNode(10);
   Node* p2 = initNode(79);
@@ -103,6 +117,8 @@ int main() {
   printListWhile(l);
   cout << "Test: Tim(10)_(1): " << timGiaTri(l,10) << endl;
   cout << "Test: Tim(29)_(0): " << timGiaTri(l,29) << endl;
+  // Về nhà tìm giá trị nút kế cuối
+  // Làm bài tập về nhà câu 1,2,3
 
 //  Node* p = new Node;
 //  p->data = 10;
