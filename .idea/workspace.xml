@@ -30,14 +30,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98563005-dcc5-40eb-9bdb-2752c4935ff0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Code_Qua_Trinh/Buoi02_24_02_List/DemoList_V1.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code Qua Trinh/Buoi01_17_02/con_tro_NULL.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Code_Qua_Trinh/Buoi01_17_02/con_tro_NULL.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code Qua Trinh/Buoi01_17_02/demo_cap_phat_dong.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Code_Qua_Trinh/Buoi01_17_02/demo_cap_phat_dong.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code Qua Trinh/Buoi01_17_02/demo_struct.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Code_Qua_Trinh/Buoi01_17_02/demo_struct.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code Qua Trinh/Buoi01_17_02/huong_dan_qlnv.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Code_Qua_Trinh/Buoi01_17_02/huong_dan_qlnv.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code Qua Trinh/Buoi01_17_02/opperator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Code_Qua_Trinh/Buoi01_17_02/opperator.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_Qua_Trinh/Buoi02_24_02_List/DemoList_V1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Code_Qua_Trinh/Buoi02_24_02_List/DemoList_V1.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Data_Structure_And_Algorithm" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Data_Structure_And_Algorithm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
