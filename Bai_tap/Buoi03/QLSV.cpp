@@ -48,6 +48,7 @@ void initList(List& l) {
   l.pTail = NULL;
 }
 
+// Viết hàm thêm sinh viên vào đầu danh sách
 void addHead(List &l, Node *p) {
   if (l.pHead == NULL) {
     l.pHead = p;
@@ -58,6 +59,7 @@ void addHead(List &l, Node *p) {
   }
 }
 
+// Viết hàm thêm sinh viên vào cuối danh sách
 void addTail(List &l, Node *p) {
   if (l.pHead == NULL) {
     l.pHead = p;
@@ -82,6 +84,11 @@ void initDataListSV(List &dsSV)
   addHead(dsSV, initNode(sv1));
   addHead(dsSV, initNode(sv2));
   addHead(dsSV, initNode(sv3));
+  addHead(dsSV, initNode(sv4));
+  addHead(dsSV, initNode(sv5));
+  addHead(dsSV, initNode(sv6));
+  addHead(dsSV, initNode(sv7));
+  addTail(dsSV, initNode(sv8));
 }
 
 // Cau 7: Viet ham in danh sach sinh vien
@@ -111,6 +118,7 @@ void capNhatXL(List& l) {
 }
 
 int main() {
+  cout << "Cau 1-> 5. Khoi tao ds sv và add head, tail sinh viên " << endl;
   List dsSV;
   initList(dsSV);
   cout << "Test: Cau 6. Khoi tao ds sv: " << endl;
