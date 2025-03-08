@@ -80,6 +80,7 @@ void initDataListSV(List &dsSV)
   SinhVien sv6 = {128, "Nguyen Van G", 4.1, ""};
   SinhVien sv7 = {129, "Nguyen Van H", 8.3, ""};
   SinhVien sv8 = {130, "Nguyen Van K", 7.9, ""};
+  SinhVien sv9 = {131, "Nguyen Van L", 9.7, ""};
 
   addHead(dsSV, initNode(sv1));
   addHead(dsSV, initNode(sv2));
@@ -88,7 +89,8 @@ void initDataListSV(List &dsSV)
   addHead(dsSV, initNode(sv5));
   addHead(dsSV, initNode(sv6));
   addHead(dsSV, initNode(sv7));
-  addTail(dsSV, initNode(sv8));
+  addHead(dsSV, initNode(sv8));
+  addTail(dsSV, initNode(sv9));
 }
 
 // Cau 7: Viet ham in danh sach sinh vien
@@ -117,6 +119,92 @@ void capNhatXL(List& l) {
   }
 }
 
+/* Cau 9. Viet ham tìm điểm trung bình cao nhất
+Input:
++ List dsSV => ds ban dau
+Output:
++ return float điểm trung bình cao nhất
+ */
+
+float timDTBCaoNhat(List l) {
+  float maxDTB = 0;
+  for (Node *p = l.pHead; p != NULL; p = p->pNext) {
+    if(p->data.diemTB > maxDTB) {
+      maxDTB = p->data.diemTB;
+    }
+  }
+  return maxDTB;
+}
+
+/* Cau 10. Viet ham tìm sv theo mã sinh viên
+Input:
++ List dsSV => ds ban dau
+Output:
++ return SinhVien theo mã sinh viên truyền vào
+ */
+
+SinhVien timSVTheoMaSV(List l, int maSV) {
+  SinhVien result;
+  for (Node *p = l.pHead; p != NULL; p = p->pNext) {
+    if(p->data.maSV == maSV) {
+      result = p->data;
+    }
+  }
+  return result;
+}
+
+/* Cau 11. Viet ham tìm list sv có điểm TB cao nhất
+Có thể có nhiều sv bằng điểm TB cao nhất
+Input:
++ List dsSV => ds ban dau
+Output:
++ return List => ds SinhVien có điểm TB cao nhất
+ */
+
+List timListSVCoDTBMax(List l) {
+  float maxDTB = timDTBCaoNhat(l);
+  List result;
+  initList(result);
+  for (Node *p = l.pHead; p != NULL; p = p->pNext) {
+    if(p->data.diemTB == maxDTB) {
+      SinhVien sv = p->data;
+      addHead(result, initNode(sv));
+    }
+  }
+  return result;
+}
+
+/* Ham tìm điểm TB thấp nhất
+Input:
++ List dsSV => ds ban dau
+Output:
++ return float
+ */
+
+float timDTBThapNhat(List l) {
+  float maxDTB = l.pHead->data.diemTB;
+  for (Node *p = l.pHead; p != NULL; p = p->pNext) {
+    if(p->data.diemTB < maxDTB) {
+      maxDTB = p->data.diemTB;
+    }
+  }
+  return maxDTB;
+}
+
+List timListSVDTBThapNhat(List l) {
+  float minDTB = timDTBThapNhat(l);
+  List result;
+  initList(result);
+  for (Node *p = l.pHead; p != NULL; p = p->pNext) {
+    if(p->data.diemTB == minDTB) {
+      SinhVien sv = p->data;
+      addHead(result, initNode(sv));
+    }
+  }
+  return result;
+}
+
+
 int main() {
   cout << "Cau 1-> 5. Khoi tao ds sv và add head, tail sinh viên " << endl;
   List dsSV;
@@ -128,5 +216,18 @@ int main() {
   cout << "Test: Cau 8 . Cap nhat xep loai: " << endl;
   capNhatXL(dsSV);
   printListSV(dsSV);
+  cout << "Test: Cau 9 . điểm trung bình cao nhất: " << timDTBCaoNhat(dsSV) << endl;
+  cout << endl;
+  cout << "Test: Cau 10 . Tìm Sinh viên có mã sv 125: " << endl;
+  SinhVien svTim = timSVTheoMaSV(dsSV, 125);
+  inSV(svTim);
+  cout << endl;
+  cout << "Test: Cau 11 . Tìm list sv có điểm TB cao nhất: " << endl;
+  List dsDVMaxDTB = timListSVCoDTBMax(dsSV);
+  printListSV(dsDVMaxDTB);
+  cout << endl;
+  cout << "Test: Cau 12 . Tìm list sv có điểm TB thấp nhất: " << endl;
+  List dsSVMinDTB = timListSVDTBThapNhat(dsSV);
+  printListSV(dsSVMinDTB);
   return 0;
 }
