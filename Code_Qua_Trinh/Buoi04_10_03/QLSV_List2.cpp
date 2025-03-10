@@ -97,6 +97,7 @@ int initDataListSV(List& dsSV) {
     return 8;
 }
 
+// Cau 7: In ds sv
 void printList(List l) {
     cout << "Di tu pHead den pTail: " << endl;
     for (Node* p = l.pHead; p != NULL; p = p->pNext) {
