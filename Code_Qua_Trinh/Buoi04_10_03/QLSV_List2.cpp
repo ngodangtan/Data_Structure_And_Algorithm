@@ -75,7 +75,7 @@ void pushBack(List& l, Node* p) {
     }
 }
 
-void initDataListSV(List& dsSV) {
+int initDataListSV(List& dsSV) {
     SinhVien sv1 = {123, "Nguyen Van A", 9.1, ""};
     SinhVien sv2 = {124, "Nguyen Van B", 8.8, ""};
     SinhVien sv3 = {125, "Nguyen Van C", 9.1, ""};
@@ -94,6 +94,7 @@ void initDataListSV(List& dsSV) {
     pushBack(dsSV, initNode(sv6));
     pushBack(dsSV, initNode(sv7));
     pushBack(dsSV, initNode(sv8));
+    return 8;
 }
 
 void printList(List l) {
@@ -113,7 +114,7 @@ int main() {
     List dsSV;
     initList(dsSV);
     cout << "Test: Cau 6. Khoi tao ds sv: " << endl;
-    initDataListSV(dsSV);
+    cout << "Ket qua: " << initDataListSV(dsSV) << " sinh vien." << endl;
     cout << "Test: Cau 7. In danh sach sv" << endl;
     printList(dsSV);
   return 0;
