@@ -77,5 +77,7 @@ int main() {
   EnQueue(q, initNode(20));
   EnQueue(q, initNode(30));
   printQueue(q);
+  DeQueue(q);
+  printQueue(q);
   return 0;
 }
