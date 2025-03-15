@@ -69,7 +69,7 @@ void printQueue(Queue q) {
     for (Node *p = q.pFront; p != NULL; p = p->pNext) {
         cout << p->data << "    ";
     }
-    cout << ">" << endl << endl;
+    cout << ">> rear" << endl << endl;
 }
 
 /* Câu 2 Viết hàm kiểm tra Queue có rỗng hay không
@@ -84,18 +84,45 @@ bool isEmptyQueue(Queue q) {
   return true;
 }
 
+// Cau 5 viết hàm in phần tử Front
+void printFront(Queue q) {
+    if (isEmptyQueue(q)) {
+      cout << "Queue is empty" << endl;
+      return;
+    }
+
+    cout << "Queue q = front <<  " << q.pFront->data << endl;
+}
+
+// Cau 5 viết hàm in phần tử Rear
+void printRear(Queue q) {
+  if (isEmptyQueue(q)) {
+    cout << "Queue is empty" << endl;
+    return;
+  }
+  cout << "Queue q = rear  <<  " << q.pRear->data << endl;
+}
+
 int main() {
     Queue q;
     // Câu 1: Khởi tạo Queue
     initQueue(q);
     cout << "Test câu 2: Queue có rỗng hay không: " << isEmptyQueue(q) << " (1) queue rỗng" << endl;
 
+    // Câu 3 đưa một phần tử vào Queue
     EnQueue(q, initNode(10));
     EnQueue(q, initNode(20));
     EnQueue(q, initNode(30));
     printQueue(q);
     cout << "Test câu 2: Queue có rỗng hay không: " << isEmptyQueue(q) << " (0) queue khong rỗng" << endl;
+    // Câu 4 lấy một phần tử ra khỏi Queue
     DeQueue(q);
     printQueue(q);
+    EnQueue(q, initNode(40));
+    printQueue(q);
+    cout << "Test câu 5: Phần tử Front là " << endl;
+    printFront(q);
+    cout << "Test câu 5: Phần tử Rear là " << endl;
+    printRear(q);
     return 0;
 }
