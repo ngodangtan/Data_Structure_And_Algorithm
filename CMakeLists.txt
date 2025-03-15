@@ -3,4 +3,4 @@ project(Data_Structure_And_Algorithm)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Data_Structure_And_Algorithm Bai_tap/Buoi04/QLSV-V2-24210173.cpp)
+add_executable(Data_Structure_And_Algorithm Bai_tap/Buoi04/Queue-24210173.cpp)
