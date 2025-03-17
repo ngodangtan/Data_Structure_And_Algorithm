@@ -113,8 +113,14 @@ Output:
  */
 void capNhatXL(List& l) {
   for (Node *p = l.pHead; p != NULL; p = p->pNext) {
-    if(p->data.diemTB > 9) {
+    if(p->data.diemTB >= 8) {
       p->data.xepLoai = "Xuat xac";
+    } else if(p->data.diemTB > 6 && p->data.diemTB < 8) {
+      p->data.xepLoai = "Kha";
+    } else if(p->data.diemTB > 5 && p->data.diemTB < 6) {
+      p->data.xepLoai = "Trung Binh";
+    } else {
+      p->data.xepLoai = "Kem";
     }
   }
 }
