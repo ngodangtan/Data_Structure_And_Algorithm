@@ -30,10 +30,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98563005-dcc5-40eb-9bdb-2752c4935ff0" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/Bai_tap/Buoi05/HaNoiTower.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai_tap/Buoi05/HaNoiTower.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Bai_tap/Buoi05/HaNoiTower.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bai_tap/Buoi05/StackFloat.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Bai_tap/Buoi05/StackFloat.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Data_Structure_And_Algorithm" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Data_Structure_And_Algorithm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +130,7 @@
       <workItem from="1742212219424" duration="6078000" />
       <workItem from="1742538293115" duration="2914000" />
       <workItem from="1742629365191" duration="1412000" />
-      <workItem from="1742636827836" duration="319000" />
+      <workItem from="1742636827836" duration="4982000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />

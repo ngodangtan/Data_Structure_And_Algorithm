@@ -6,6 +6,7 @@
 #include <iostream>
 using namespace std;
 
+// Khai báo cấu trúc Node
 // Bước 1: Tạo cấu trúc Node
 struct Node {
   float data;
@@ -77,16 +78,17 @@ void pop(Stack& s) {
   delete p;
 }
 
-int getValue(Stack s) {
+float getValue(Stack s) {
   if (s.pTop != NULL) {
     return s.pTop->data;
   }
 }
 
 int main() {
-  Node* p1 = initNode(10);
-  Node* p2 = initNode(79);
-  Node* p3 = initNode(39);
+  Node* p1 = initNode(65.4);
+  Node* p2 = initNode(33.4);
+  Node* p3 = initNode(11.3);
+  Node* p4 = initNode(20.3);
 
   Stack s;
   initStack(s);
@@ -94,7 +96,10 @@ int main() {
   push(s,p1);
   push(s,p2);
   push(s,p3);
+  push(s,p4);
   printStack(s);
+
+  cout << "\n\nTest lấy value TOP: " << getValue(s) << endl;
 
   return 0;
 }

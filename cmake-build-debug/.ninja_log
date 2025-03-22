@@ -1,9 +1,10 @@
 # ninja log v6
+7	851	1742643272994457781	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi05/StackFloat.cpp.o	1931cba91b9bb445
 5	460	1742033573686965944	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi04/Queue-24210173.cpp.o	64d87f9854797eb
 1	494	1741187137537923983	CMakeFiles/Data_Structure_And_Algorithm.dir/Code_Qua_Trinh/Buoi03_03_03/DemoList_lib.cpp.o	b4b665699a3f681f
 1	587	1740212089710390610	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi01/Bai_01.cpp.o	55c8bca5bf422b
-1	65	1742538293135914415	build.ninja	a7001285c28b4d6a
-500	534	1742215878757992897	Data_Structure_And_Algorithm	9b534c04aff21683
+2	84	1742643285512084030	build.ninja	a7001285c28b4d6a
+851	896	1742643273838174846	Data_Structure_And_Algorithm	f53652e3716681d8
 5	520	1741186438014689573	CMakeFiles/Data_Structure_And_Algorithm.dir/Code_Qua_Trinh/Buoi03_03_03/List_QLSV.cpp.o	ca42bab33f29344c
 5	478	1741184159821981373	CMakeFiles/Data_Structure_And_Algorithm.dir/Code_Qua_Trinh/Buoi03_03_03/DemoList_v2.cpp.o	13c215e4aaa7e811
 3	461	1740837474682750259	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi02/Bai_tap_buoi02.cpp.o	d78121ae9e807e87
@@ -17,3 +18,8 @@
 3	462	1740826667300146456	CMakeFiles/Data_Structure_And_Algorithm.dir/Code_Qua_Trinh/Buoi02_24_02_List/DemoList_V1.cpp.o	a4e8e42b0ed30ca6
 3	414	1740210945854449125	CMakeFiles/Data_Structure_And_Algorithm.dir/main.cpp.o	53aec21c18b2ceb3
 4	450	1742032537539765594	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi04/QLSV-V2-24210173.cpp.o	c172b8764b3fc1e7
+1	77	1742643285512084030	build.ninja	a7001285c28b4d6a
+1	420	1742643285528874238	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi05/HaNoiTower.cpp.o	60ae79b94e293488
+421	453	1742643285949056383	Data_Structure_And_Algorithm	740a4fc9f080d36
+3	434	1742643310543993297	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi05/HaNoiTower.cpp.o	60ae79b94e293488
+435	467	1742643310976511631	Data_Structure_And_Algorithm	740a4fc9f080d36
