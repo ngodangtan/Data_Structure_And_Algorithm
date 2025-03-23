@@ -3,4 +3,4 @@ project(Data_Structure_And_Algorithm)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Data_Structure_And_Algorithm Code_Qua_Trinh/Buoi05_17_03/DemoYTuong.cpp)
+add_executable(Data_Structure_And_Algorithm Bai_tap/Buoi05/Test02.cpp)
