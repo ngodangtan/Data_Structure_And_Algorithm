@@ -99,10 +99,10 @@ Output:
 Node* timSVTheoMaSV(List l, int maSV) {
   for (Node *p = l.pHead; p != NULL; p = p->pNext) {
     if (maSV == p->data.maSV) {
-      return p;  // trả về ngay khi tìm thấy
+      return p;
     }
   }
-  return NULL; // không tìm thấy thì trả về NULL
+  return NULL;
 }
 
 /* Câu 4: Viết hàm đếm sinh viên có điểm môn học dưới trung bình
@@ -185,10 +185,29 @@ void updateDiemMHByMSV(List& l, int maSV, float newDiemMH) {
   }
 }
 
+/* Câu 9: Viết hàm sao chép toàn bộ sinh viên sang một danh sách mới
+   Input: List sv (danh sách ban đầu)
+   Output: List (danh sách mới chứa các sinh viên đã sao chép) */
+List copyListSV(List l) {
+  // Khởi tạo danh sách mới rỗng
+  List newList;
+  initList(newList);
+
+  // Duyệt qua danh sách ban đầu và sao chép từng node
+  for (Node *p = l.pHead; p != NULL; p = p->pNext) {
+    // Tạo node mới với dữ liệu của node hiện tại
+    Node* newNode = initNode(p->data);
+    // Thêm node mới vào cuối danh sách mới
+    addTail(newList, newNode);
+  }
+  return newList;
+}
+
 int main() {
   List dsSV;
   initList(dsSV);
 
+  cout << "Test: Câu 10. Tạo dữ liệu sinh viên:" << endl;
   SinhVien sv1 = {123, "Nguyen Van A", 9.1};
   SinhVien sv2 = {124, "Nguyen Van B", 8.8};
   SinhVien sv3 = {125, "Nguyen Van C", 9.1};
@@ -247,11 +266,16 @@ int main() {
   dsSVMaxAbove8 = timListSVDMHTrenTam(dsSV);
   printListSV(dsSVMaxAbove8);
 
-  cout << "\n\nTest: Cau 8. Update điểm MH them mã SV: điểm MH: 6 MSV: 128" << endl;
+  cout << "\n\nTest: Câu 8. Update điểm MH them mã SV: điểm MH: 6 MSV: 128" << endl;
   updateDiemMHByMSV(dsSV,128,6.0);
-  cout << "\n\nTest: Cau 8. Update điểm MH them mã SV: điểm MH: 4 MSV: 123" << endl;
+  cout << "\n\nTest: Câu 8. Update điểm MH them mã SV: điểm MH: 4 MSV: 123" << endl;
   updateDiemMHByMSV(dsSV,123,4.0);
   cout << "Ds sv sau khi update diem MH" << endl;
   printListSV(dsSV);
+
+  cout << "\n\nTest: Câu 9 sao chép dsSV qua một List mới" << endl;
+  List listCopy = copyListSV(dsSV);
+  cout << "\n\nTest: Câu 9 List mới sau khi sao ché[" << endl;
+  printListSV(listCopy);
   return 0;
 }
