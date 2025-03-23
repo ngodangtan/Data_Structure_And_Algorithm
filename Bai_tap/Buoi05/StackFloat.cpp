@@ -49,6 +49,7 @@ bool isFullStack(Stack s) {
   return s.size > s.maxSize ? true : false;
 }
 
+// Hàm thêm một Node vào stack
 void push(Stack& s, Node* p) {
   if (s.pTop == NULL) {
     s.pTop = p;
@@ -59,6 +60,7 @@ void push(Stack& s, Node* p) {
   s.size++;
 }
 
+// Hàm in toàn bộ giá trị trong stack
 void printStack(Stack s) {
   cout << "Stack = Top<<  ";
   for (Node* p = s.pTop; p != NULL; p = p->pNext) {
@@ -67,6 +69,7 @@ void printStack(Stack s) {
   cout << ">>" << endl;
 }
 
+// Hàm loạ bỏ Node top khỏi stack
 void pop(Stack& s) {
   if (s.pTop == NULL) {
     return;
@@ -78,7 +81,11 @@ void pop(Stack& s) {
   delete p;
 }
 
-float getValue(Stack s) {
+/* Hàm trả về giá trị top của stack
+Input: Stack s
+Output: return float
+ */
+float getTopValue(Stack s) {
   if (s.pTop != NULL) {
     return s.pTop->data;
   }
@@ -99,7 +106,7 @@ int main() {
   push(s,p4);
   printStack(s);
 
-  cout << "\n\nTest lấy value TOP: " << getValue(s) << endl;
+  cout << "\n\nTest lấy value TOP: " << getTopValue(s) << endl;
 
   return 0;
 }
