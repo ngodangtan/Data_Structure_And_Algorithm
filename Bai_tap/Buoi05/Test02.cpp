@@ -96,7 +96,7 @@ Output:
 + return Node*
  */
 
-Node* timSVTheoMaSV(List& l, int maSV) {
+Node* timSVTheoMaSV(List l, int maSV) {
   for (Node *p = l.pHead; p != NULL; p = p->pNext) {
     if (maSV == p->data.maSV) {
       return p;  // trả về ngay khi tìm thấy
@@ -176,9 +176,13 @@ List timListSVDMHTrenTam(List l) {
 /* Câu 8: Viết hàm cập nhật điểm môn học theo mã SV
 Input: List sv
  */
-void updateDiemMHByMSV(List& l, int maSV) {
-  Node *p = timSVTheoMaSV(l, maSV);
-
+void updateDiemMHByMSV(List& l, int maSV, float newDiemMH) {
+  for (Node *p = l.pHead; p != NULL; p = p->pNext) {
+    if (maSV == p->data.maSV) {
+      p->data.diemMH = newDiemMH;
+      break;
+    }
+  }
 }
 
 int main() {
@@ -243,6 +247,11 @@ int main() {
   dsSVMaxAbove8 = timListSVDMHTrenTam(dsSV);
   printListSV(dsSVMaxAbove8);
 
-
+  cout << "\n\nTest: Cau 8. Update điểm MH them mã SV: điểm MH: 6 MSV: 128" << endl;
+  updateDiemMHByMSV(dsSV,128,6.0);
+  cout << "\n\nTest: Cau 8. Update điểm MH them mã SV: điểm MH: 4 MSV: 123" << endl;
+  updateDiemMHByMSV(dsSV,123,4.0);
+  cout << "Ds sv sau khi update diem MH" << endl;
+  printListSV(dsSV);
   return 0;
 }
