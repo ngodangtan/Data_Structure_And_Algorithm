@@ -42,6 +42,13 @@ void initHashTable(HashTable& h) {
     }
 }
 
+void initHashTable(HashTable& h, int Size) {
+    for (int i = 0; i < Size; i++) {
+        h.buckets[i].pHead = NULL;
+        h.buckets[i].pTail = NULL;
+    }
+}
+
 int hashFunc(int value) {
     return value % SIZE;
 }
@@ -91,6 +98,10 @@ void printHashTable(HashTable h) {
 int main() {
     HashTable h;
     initHashTable(h);
+
+    // Thử làm cấp phát động size dynamic v3
+    HashTable h2;
+    initHashTable(h2, 10);
 
     add(h, 50);
     add(h, initNode(73));
