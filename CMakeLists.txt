@@ -3,4 +3,4 @@ project(Data_Structure_And_Algorithm)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Data_Structure_And_Algorithm Code_Qua_Trinh/Buoi06_24_03/DemoHashTableV2_4Steps.cpp)
+add_executable(Data_Structure_And_Algorithm Bai_tap/Buoi06/HashTable_SoThuc.cpp)

@@ -49,11 +49,11 @@ cmake_ninja_workdir = /Users/felixngo/Data_Structure_And_Algorithm/cmake-build-d
 
 build cmake_object_order_depends_target_Data_Structure_And_Algorithm: phony || .
 
-build CMakeFiles/Data_Structure_And_Algorithm.dir/Code_Qua_Trinh/Buoi06_24_03/DemoHashTableV2_4Steps.cpp.o: CXX_COMPILER__Data_Structure_And_Algorithm_unscanned_Debug /Users/felixngo/Data_Structure_And_Algorithm/Code_Qua_Trinh/Buoi06_24_03/DemoHashTableV2_4Steps.cpp || cmake_object_order_depends_target_Data_Structure_And_Algorithm
-  DEP_FILE = CMakeFiles/Data_Structure_And_Algorithm.dir/Code_Qua_Trinh/Buoi06_24_03/DemoHashTableV2_4Steps.cpp.o.d
+build CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi06/HashTable_SoThuc.cpp.o: CXX_COMPILER__Data_Structure_And_Algorithm_unscanned_Debug /Users/felixngo/Data_Structure_And_Algorithm/Bai_tap/Buoi06/HashTable_SoThuc.cpp || cmake_object_order_depends_target_Data_Structure_And_Algorithm
+  DEP_FILE = CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi06/HashTable_SoThuc.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Data_Structure_And_Algorithm.dir
-  OBJECT_FILE_DIR = CMakeFiles/Data_Structure_And_Algorithm.dir/Code_Qua_Trinh/Buoi06_24_03
+  OBJECT_FILE_DIR = CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi06
 
 
 # =============================================================================
@@ -63,7 +63,7 @@ build CMakeFiles/Data_Structure_And_Algorithm.dir/Code_Qua_Trinh/Buoi06_24_03/De
 #############################################
 # Link the executable Data_Structure_And_Algorithm
 
-build Data_Structure_And_Algorithm: CXX_EXECUTABLE_LINKER__Data_Structure_And_Algorithm_Debug CMakeFiles/Data_Structure_And_Algorithm.dir/Code_Qua_Trinh/Buoi06_24_03/DemoHashTableV2_4Steps.cpp.o
+build Data_Structure_And_Algorithm: CXX_EXECUTABLE_LINKER__Data_Structure_And_Algorithm_Debug CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi06/HashTable_SoThuc.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk
   OBJECT_DIR = CMakeFiles/Data_Structure_And_Algorithm.dir
   POST_BUILD = :
