@@ -152,10 +152,44 @@ float tongGiaTriLe(HashTable h) {
   return tong;
 }
 
+/* Câu 8: Hàm kiểm tra bảng băm rỗng hay không ?
+ Input: HashTable h
+ Output: bool
+ */
+bool isEmpty(HashTable h) {
+  for (int i = 0; i < SIZE; i++) {
+    if (h.buckets[i].pHead != NULL) {
+      return false;
+    }
+  }
+  return true;
+}
+
+/* Câu 9: Viết hàm xử lý bẳng băm theo một điều kiện bất kỳ.
+ -> Hàm đếm số dương trong bảng băm
+ Input: HashTable h
+ Output: return int số lượng
+ */
+
+int demSoDuong(HashTable h) {
+  int soLuong = 0;
+  for (int i = 0; i < SIZE; i++) {
+    for(Node* p = h.buckets[i].pHead; p != NULL; p = p->pNext) {
+      if (int(p->data) > 0) {
+        soLuong++;
+      }
+    }
+  }
+  return soLuong;
+}
+
 int main() {
-  HashTable h;
+  HashTable h, emptyHash;
   initHashTable(h);
+  initHashTable((emptyHash));
+  // Câu 1 Hàm tạo dữ liệu tự động cho bảng băm
   initDataForHT(h);
+  cout << "\nTest Câu 4: In bảng băm" << endl;
   printHashTable(h);
 
   cout << "\nTest câu 5: Tìm giá trị trong bảng băm: 967(1) = "<< timGiaTri(h,967) << endl;
@@ -173,10 +207,13 @@ int main() {
   } else {
     cout << "Remove giá trị -1 thất bại" << endl;
   }
+
   printHashTable(h);
 
-  cout << "\n Test Câu 7: Tổng số lẻ trong bảng băm là " << tongGiaTriLe(h) << endl;
+  cout << "\nTest Câu 7: Tổng số lẻ trong bảng băm là " << tongGiaTriLe(h) << endl;
 
-
+  cout << "\nTest Câu 8: Kiểm tra bảng băm có rỗng hay không: h(0) " << isEmpty(h) << endl;
+  cout << "\nTest Câu 8: Kiểm tra bảng băm có rỗng hay không: emptyHash(1) " << isEmpty(emptyHash) << endl;
+  cout << "\nTest Câu 9: Đếm số dương trong bảng băm: " << demSoDuong(h) << endl;
   return 0;
 }
