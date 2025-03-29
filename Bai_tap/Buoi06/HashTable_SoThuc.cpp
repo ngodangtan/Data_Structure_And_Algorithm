@@ -36,6 +36,8 @@ int hashFunc(float value) {
   return valueInt % SIZE;
 }
 
+// Hàm thêm giá trị float vào bẳng băm
+// Input: HashTable& h
 void add(HashTable& h, float value) {
   // Bước 1: chọn vị trí bucket
   int viTri = hashFunc(value);
@@ -50,6 +52,8 @@ void add(HashTable& h, float value) {
   }
 }
 
+// Hàm khởi tạo bảng băm
+// Input: HashTable&
 void initHashTable(HashTable& h) {
   for (int i = 0; i < SIZE; i++) {
     h.buckets[i].pHead = NULL;
@@ -66,6 +70,8 @@ void initDataForHT(HashTable& h) {
   }
 }
 
+// Hàm in bảng băm
+// Input: HashTable
 void printHashTable(HashTable h) {
   cout << "Hash Table. Size" << SIZE << endl;
   for (int i = 0; i < SIZE; i++) {
@@ -77,7 +83,7 @@ void printHashTable(HashTable h) {
   }
 }
 
-/* Viết hàm tìm giá trị có trong bảng băm
+/* Câu 5: Viết hàm tìm giá trị có trong bảng băm
 Input:
 + h: HashTable
 + value: int
@@ -96,10 +102,63 @@ bool timGiaTri(HashTable h, float value) {
   return false;
 }
 
+/*
+ */
+/* Câu 6 Yêu cầu: Viết hàm xoá một giá trị bất kỳ trong bảng băm ?
+Input:
++ l: HashTable& l, removeValue: Giá trị muốn xoá
+Output:
++  return bool
++ x: HashTable&
+*/
+bool removeGiaTri(HashTable& h, float removeValue) {
+  int viTri = hashFunc(removeValue);
+  Node* prev = NULL;
+  for (Node* current = h.buckets[viTri].pHead; current != NULL; current = current->pNext) {
+    if (current->data == removeValue) {
+      // Nếu current là node đầu tiên
+      if (prev == NULL) {
+        h.buckets[viTri].pHead = current->pNext;
+        if (h.buckets[viTri].pHead == NULL) {
+          h.buckets[viTri].pTail = NULL;
+        }
+      } else {
+        prev->pNext = current->pNext;
+        if (current == h.buckets[viTri].pTail) {
+          h.buckets[viTri].pTail = prev;
+        }
+      }
+      delete current;
+      return true;
+    }
+    prev = current;
+  }
+  return false;
+}
+
 int main() {
   HashTable h;
   initHashTable(h);
   initDataForHT(h);
   printHashTable(h);
+
+  cout << "\nTest câu 5: Tìm giá trị trong bảng băm: 967(1) = "<< timGiaTri(h,967) << endl;
+
+
+  cout << "\nTest Câu 6: Xoá giá trị trong bảng băm: 880(1) , -1(0)" << endl;
+  if (removeGiaTri(h, 880)) {
+    cout << "Gia Tri 880 removed thành công" << endl;
+  } else {
+    cout << "Remove giá trị 880 thất bại" << endl;
+  }
+
+  if (removeGiaTri(h, -1)) {
+    cout << "Gia Tri -1 removed thành công" << endl;
+  } else {
+    cout << "Remove giá trị -1 thất bại" << endl;
+  }
+  printHashTable(h);
+
+
   return 0;
 }
