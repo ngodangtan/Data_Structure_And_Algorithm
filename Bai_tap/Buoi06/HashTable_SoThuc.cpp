@@ -187,7 +187,7 @@ int main() {
   HashTable h, emptyHash;
   initHashTable(h);
   initHashTable((emptyHash));
-  // Câu 1 Hàm tạo dữ liệu tự động cho bảng băm
+  cout << "\nTest câu 1,2: Tạo dữ liệu tự động cho bảng băm" << endl;
   initDataForHT(h);
   cout << "\nTest Câu 4: In bảng băm" << endl;
   printHashTable(h);
