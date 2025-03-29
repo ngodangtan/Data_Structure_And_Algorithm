@@ -153,6 +153,38 @@ void timGiaTriMaxMin(HashTable h, int& maxValue , int& minValue) {
   }
 }
 
+/* Câu 9: Đếm số phần tử chẵn (evenCount) và lẻ (oddCount) trong bảng băm.
+   So sánh evenCount với oddCount:
+       + evenCount < oddCount => return "true"
+       + evenCount == oddCount => return "1"
+       + evenCount > oddCount => return "false"
+Input: HashTable h
+Output: return string
+*/
+string demChanLe(HashTable h) {
+  int evenCount = 0;
+  int oddCount = 0;
+
+  for (int i = 0; i < SIZE; i++) {
+    for (Node* p = h.buckets[i].pHead; p != NULL; p = p->pNext) {
+      int intValue = (int)p->data;
+      if (intValue % 2 == 0) {
+        evenCount++;
+      } else {
+        oddCount++;
+      }
+    }
+  }
+
+  if (evenCount < oddCount) {
+    return "true";   // Trường hợp <
+  } else if (evenCount == oddCount) {
+    return "1";      // Trường hợp =
+  } else {
+    return "false";  // Trường hợp >
+  }
+}
+
 int main() {
   cout << "Test câu 1,2,3,4: Khởi tạo giá trị cho bảng băm" << endl;
   HashTable h, emptyHash;
@@ -171,5 +203,7 @@ int main() {
 
   timGiaTriMaxMin(h, maxValue, minValue);
   cout << "\n Test Câu 8: Tìm giá trị max và min trong bảng băm: max = " << maxValue << " min = " << minValue << endl;
+  cout << "\nTest Câu 9: So sánh số phần tử chẵn và lẻ: "
+       << demChanLe(h) << endl;
   return 0;
 }
