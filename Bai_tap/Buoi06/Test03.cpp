@@ -100,13 +100,50 @@ bool isEmpty(HashTable h) {
   return true;
 }
 
+/* Câu 6: Đếm các giá trị lưu trữ trong bảng băm
+Input: HashTable h
+Output: return int
+ */
+int countValues(HashTable h) {
+  int count = 0;
+  for (int i = 0; i < SIZE; i++) {
+    for (Node* p = h.buckets[i].pHead; p != NULL; p = p->pNext) {
+      count++;
+    }
+  }
+  return count;
+}
+
+/* Câu 7: Viết hàm tìm giá trị có trong bảng băm
+Input:
++ h: HashTable
++ value: int
+Output:
++ bool: return
+ */
+bool timGiaTri(HashTable h, float value) {
+  int viTri = hashFunc(value);
+  for(Node* p = h.buckets[viTri].pHead; p != NULL; p = p->pNext) {
+    if(p->data == value) {
+      return true;
+    }
+  }
+  return false;
+}
+
 int main() {
-  cout << "Test câu 1,2,3: Khởi tạo giá trị cho bảng băm" << endl;
+  cout << "Test câu 1,2,3,4: Khởi tạo giá trị cho bảng băm" << endl;
   HashTable h, emptyHash;
   initHashTable(h);
   initHashTable((emptyHash));
   initDataForHT(h);
   printHashTable(h);
 
+  cout << "\nTest Câu 5: Kiểm tra bảng băm có rỗng hay không: h(0) " << isEmpty(h) << endl;
+  cout << "Test Câu 5: Kiểm tra bảng băm có rỗng hay không: emptyHash(1) " << isEmpty(h) << endl;
+
+  cout << "\nTest Câu 6: Đếm các giá trị có trong bảng băm: " << countValues(h) << endl;
+  cout << "\nTest Câu 7: Tìm giá trị trong bảng băm: 905(1) = "<< timGiaTri(h,967) << endl;
+  cout << "Test Câu 7: Tìm giá trị trong bảng băm: -2(0) = "<< timGiaTri(h,-2) << endl;
   return 0;
 }
