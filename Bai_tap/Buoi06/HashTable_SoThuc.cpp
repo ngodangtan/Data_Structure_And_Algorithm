@@ -136,6 +136,22 @@ bool removeGiaTri(HashTable& h, float removeValue) {
   return false;
 }
 
+/* Câu 7: Viết hàm tính tổng gía trị lẻ trong bảng băm
+ Input: HashTable h
+ Output: return float
+ */
+float tongGiaTriLe(HashTable h) {
+  float tong = 0;
+  for (int i = 0; i < SIZE; i++) {
+    for(Node* p = h.buckets[i].pHead; p != NULL; p = p->pNext) {
+      if (int(p->data) % 2 != 0) {
+        tong += p->data;
+      }
+    }
+  }
+  return tong;
+}
+
 int main() {
   HashTable h;
   initHashTable(h);
@@ -158,6 +174,8 @@ int main() {
     cout << "Remove giá trị -1 thất bại" << endl;
   }
   printHashTable(h);
+
+  cout << "\n Test Câu 7: Tổng số lẻ trong bảng băm là " << tongGiaTriLe(h) << endl;
 
 
   return 0;
