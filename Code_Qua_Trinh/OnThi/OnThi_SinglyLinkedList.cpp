@@ -87,6 +87,17 @@ bool findValueInList(List l, int findValue) {
     return false;
 }
 
+bool findValueInListUseWhile(List l, int findValue) {
+  Node* p = l.pHead;
+  while(p!=NULL) {
+    if(p->data == findValue) {
+      return true;
+    }
+    p = p->pNext;
+  }
+  return p;
+}
+
 void printNode(Node* p) {
     std::cout << p->data << std::endl;
 }
@@ -136,6 +147,42 @@ void insetNodeAtPosition(List& l, int position, Node* p) {
     }
 }
 
+void removeNodeAtPosition(List& l, int position) {
+    if (l.pHead == NULL || position <= 0) return;
+
+    // Trường hợp xoá node đầu tiên
+    if (position == 1) {
+        removeHead(l);
+        return;
+    }
+
+    Node* current = l.pHead;
+    int index = 1;
+
+    // Duyệt đến node ngay trước node cần xoá
+    while (current != NULL && index < position - 1) {
+        current = current->pNext;
+        index++;
+    }
+
+    // Nếu vị trí không hợp lệ hoặc node tiếp theo không tồn tại
+    if (current == NULL || current->pNext == NULL) {
+        std::cout << "Vi tri can xoa khong hop le.\n";
+        return;
+    }
+
+    // Xoá node
+    Node* temp = current->pNext;
+    current->pNext = temp->pNext;
+
+    // Cập nhật lại tail nếu xoá node cuối
+    if (temp == l.pTail) {
+        l.pTail = current;
+    }
+
+    delete temp;
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
@@ -171,5 +218,10 @@ int main(int argc, const char * argv[]) {
 
     std::cout << "Số lượng item trong list là " << countList(l) << std::endl;
     std::cout << "Số lượng item trong list là (phương pháp đệ quy) " << countListRecursively(l.pHead) << std::endl;
+
+    std::cout << "Remove node at position 3" << std::endl;
+	removeNodeAtPosition(l, 3);
+	printLishWhile(l);
+
     return 0;
 }
