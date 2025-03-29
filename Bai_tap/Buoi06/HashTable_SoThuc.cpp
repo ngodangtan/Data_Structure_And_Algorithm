@@ -31,6 +31,10 @@ struct HashTable {
   Bucket buckets[SIZE];
 };
 
+/* Viết hàm băm theo phương pháp chia
+Input: int value
+Output: int
+ */
 int hashFunc(float value) {
   int valueInt = (int)value;
   return valueInt % SIZE;
