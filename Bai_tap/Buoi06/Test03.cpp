@@ -121,7 +121,7 @@ Input:
 Output:
 + bool: return
  */
-bool timGiaTri(HashTable h, float value) {
+bool timGiaTri(HashTable h, int value) {
   int viTri = hashFunc(value);
   for(Node* p = h.buckets[viTri].pHead; p != NULL; p = p->pNext) {
     if(p->data == value) {
@@ -131,9 +131,32 @@ bool timGiaTri(HashTable h, float value) {
   return false;
 }
 
+/* Câu 8: Viết hàm tim max và min trong bảng băm
+Input: HashTable h, int& maxValue, int& minValue
+ */
+void timGiaTriMaxMin(HashTable h, int& maxValue , int& minValue) {
+  if (isEmpty(h))
+    return;
+
+  maxValue = 0;
+  minValue = h.buckets[0].pTail->data;
+
+  for (int i = 1; i < SIZE; i++) {
+    for (Node* p = h.buckets[i].pHead; p != NULL; p = p->pNext) {
+      if (p->data > maxValue) {
+        maxValue = p->data;
+      }
+      if (p->data < minValue) {
+        minValue = p->data;
+      }
+    }
+  }
+}
+
 int main() {
   cout << "Test câu 1,2,3,4: Khởi tạo giá trị cho bảng băm" << endl;
   HashTable h, emptyHash;
+  int maxValue, minValue;
   initHashTable(h);
   initHashTable((emptyHash));
   initDataForHT(h);
@@ -145,5 +168,8 @@ int main() {
   cout << "\nTest Câu 6: Đếm các giá trị có trong bảng băm: " << countValues(h) << endl;
   cout << "\nTest Câu 7: Tìm giá trị trong bảng băm: 905(1) = "<< timGiaTri(h,967) << endl;
   cout << "Test Câu 7: Tìm giá trị trong bảng băm: -2(0) = "<< timGiaTri(h,-2) << endl;
+
+  timGiaTriMaxMin(h, maxValue, minValue);
+  cout << "\n Test Câu 8: Tìm giá trị max và min trong bảng băm: max = " << maxValue << " min = " << minValue << endl;
   return 0;
 }
