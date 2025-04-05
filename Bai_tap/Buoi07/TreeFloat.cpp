@@ -86,7 +86,7 @@ void NLR(Tree t) {
   stack<Node*> s;
   Node* p = t.pRoot;
   
-  while (p != NULL || !s.empty()) {
+  while (p != NULL || s.empty() == false) {
     while (p != NULL) {
       cout << p->data << " ";  // In ra giá trị node gốc trước
       s.push(p);
@@ -104,7 +104,7 @@ void LRN(Tree t) {
   Node* p = t.pRoot;
   Node* lastVisited = NULL;
   
-  while (p != NULL || !s.empty()) {
+  while (p != NULL || s.empty() == false) {
     while (p != NULL) {
       s.push(p);
       p = p->pLeft;
@@ -171,7 +171,7 @@ int demNode(Tree t) {
   Node* p = t.pRoot;
   int count = 0;
   
-  while (p != NULL || !s.empty()) {
+  while (p != NULL || s.empty() == false) {
     while (p != NULL) {
       s.push(p);
       p = p->pLeft;
@@ -197,7 +197,7 @@ int demNodeLa(Tree t) {
   Node* p = t.pRoot;
   int count = 0;
   
-  while (p != NULL || !s.empty()) {
+  while (p != NULL || s.empty() == false) {
     while (p != NULL) {
       s.push(p);
       p = p->pLeft;
@@ -223,7 +223,7 @@ void inNhanhNode(Tree t, float value) {
   Node* p = t.pRoot;
   bool found = false;
   
-  while (p != NULL || !s.empty()) {
+  while (p != NULL || s.empty() == false) {
     while (p != NULL) {
       s.push(p);
       path.push(p);
@@ -286,7 +286,7 @@ float layGiaTriNgauNhien(Tree t) {
   stack<Node*> s;
   Node* p = t.pRoot;
   
-  while (p != NULL || !s.empty()) {
+  while (p != NULL || s.empty() == false) {
     while (p != NULL) {
       s.push(p);
       p = p->pLeft;
@@ -304,6 +304,37 @@ float layGiaTriNgauNhien(Tree t) {
   }
   
   return 0;
+}
+
+/* Hàm đếm số node có giá trị nhỏ hơn X
+Input:
+  + Tree t
+  + float x
+Output:
+  + return int
+*/
+int demNodeNhoHonX(Tree t, float x) {
+  stack<Node*> s;
+  Node* p = t.pRoot;
+  int count = 0;
+  
+  while (p != NULL || s.empty() == false) {
+    while (p != NULL) {
+      s.push(p);
+      p = p->pLeft;
+    }
+    
+    p = s.top();
+    s.pop();
+    
+    if (p->data < x) {
+      count++;
+    }
+    
+    p = p->pRight;
+  }
+  
+  return count;
 }
 
 int main() {
@@ -339,5 +370,8 @@ int main() {
   cout << "Test 11: In nhánh của node: " << layGiaTriNgauNhien(t) << endl;
   inNhanhNode(t, layGiaTriNgauNhien(t));
 
+  cout << "Test 12: Đếm số node nhỏ hơn 0" << endl;
+  cout << "So luong node nho hon 0: " << demNodeNhoHonX(t, 0) << endl;
+  
   return 0;
 }
