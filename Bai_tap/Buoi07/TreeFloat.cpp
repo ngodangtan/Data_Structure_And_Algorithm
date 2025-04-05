@@ -4,7 +4,6 @@
 //
 
 #include <iostream>
-#include <stack>
 #include <ctime>
 using namespace std;
 
@@ -475,8 +474,9 @@ int main() {
   cout << "Test số lượng node lá = " << demNodeLa(t) << endl;
 
   cout << endl;
-  cout << "Test 11: In nhánh của node: " << layGiaTriNgauNhien(t) << endl;
-  inNhanhNode(t, layGiaTriNgauNhien(t));
+  float giaTriRandom11 =  layGiaTriNgauNhien(t);
+  cout << "Test 11: In nhánh của node: " << giaTriRandom11 << endl;
+  inNhanhNode(t, giaTriRandom11);
 
   cout << endl;
   cout << "Test 12: Đếm số node nhỏ hơn 0" << endl;
