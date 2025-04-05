@@ -50,9 +50,9 @@ void addNode(Tree& tree, Node* p) {
     }
   }
 
-  if(p->data < p->data) {
+  if(p->data < pLoca->data) {
     pLoca->pLeft = p;
-  } else if (p->data > p->data) {
+  } else if (p->data > pLoca->data) {
     pLoca->pRight = p;
   }
 }
@@ -60,6 +60,21 @@ void addNode(Tree& tree, Node* p) {
 void addValue(Tree& tree, int value) {
   Node* p = initNode(value);
   addNode(tree, p);
+}
+
+void LNR(Tree t) {
+  stack<Node*> s;
+  Node* p = t.pRoot;
+  while (p!=NULL || s.empty() == false) {
+    while (p != NULL) {
+      s.push(p);
+      p = p->pLeft;
+    }
+    p = s.top();
+    s.pop();
+    cout << p->data << " ";
+    p = p->pRight;
+  }
 }
 
 int main() {
@@ -82,5 +97,7 @@ int main() {
   addNode(t , p6);
 
   addValue(t, 30);
+
+  LNR(t);
   return 0;
 }
