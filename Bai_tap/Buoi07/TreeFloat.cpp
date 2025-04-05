@@ -8,6 +8,7 @@
 #include <ctime>
 using namespace std;
 
+// Tạo cấu trúc Node và cây
 // Bước 1: Định nghĩa cấu trúc Node
 struct Node {
   float data;
@@ -34,6 +35,7 @@ void initTree(Tree& t) {
   t.pRoot = NULL;
 }
 
+//4. Viết hàm chén Node vào Tree
 void addNode(Tree& tree, Node* p) {
   if (tree.pRoot == NULL) {
     tree.pRoot = p;
@@ -59,6 +61,7 @@ void addNode(Tree& tree, Node* p) {
   }
 }
 
+// Viết hàm nhập giá trị float chuyển sang Node đưa vào Tree
 void addValue(Tree& tree, float value) {
   Node* p = initNode(value);
   addNode(tree, p);
@@ -119,7 +122,7 @@ void LRN(Tree t) {
   }
 }
 
-/* 2. Hàm khởi tạo data cho Tree
+/* Hàm khởi tạo data cho Tree
 Input:
   + Tree& t;
 Output:
@@ -157,7 +160,7 @@ bool timGiaTri(Tree t, float value) {
   return false;
 }
 
-/* 4. Đếm số node trên cây
+/* Đếm số node trên cây
 Input:
   + Tree t
 Output:
@@ -183,7 +186,7 @@ int demNode(Tree t) {
   return count;
 }
 
-/* 5. Đếm số node lá trên Tree
+/* Đếm số node lá trên Tree
 Input:
   + Tree t
 Output:
@@ -213,7 +216,7 @@ int demNodeLa(Tree t) {
   return count;
 }
 
-// 6. In ra nhánh của một node
+// In ra nhánh của một node
 void inNhanhNode(Tree t, float value) {
   stack<Node*> s;
   stack<Node*> path;
@@ -307,33 +310,33 @@ int main() {
   srand(time(0));
   Tree t;
   initTree(t);
-  cout << "Test: 1. Tao du lieu cho cay: " << endl;
+  cout << "Test: 1->6 Tao du lieu cho cay: " << endl;
   initDataTree(t);
 
-  cout << "Test 2: In cay theo LNR: " << endl;
+  cout << "Test 7: In cay theo LNR: " << endl;
   LNR(t);
   cout << endl;
 
-  cout << "Test 3: In cay theo NLR: " << endl;
+  cout << "Test 7: In cay theo NLR: " << endl;
   NLR(t);
   cout << endl;
 
-  cout << "Test 4: In cay theo LRN: " << endl;
+  cout << "Test 7: In cay theo LRN: " << endl;
   LRN(t);
   cout << endl;
 
-  cout << "Test 5: Tìm giá trị có trong Tree" << endl;
+  cout << "Test 8: Tìm giá trị có trong Tree" << endl;
   cout << "Test tim gia tri 10 = " << timGiaTri(t, 10) << endl;
   cout << "Test tim gia tri 36 = " << timGiaTri(t, 36) << endl;
 
   cout << endl;
-  cout << "Test 6: Đếm số node trên Tree" << endl;
+  cout << "Test 9: Đếm số node trên Tree" << endl;
   cout << "Test số lượng node = " << demNode(t) << endl;
 
-  cout << "Test 7: Đếm số node lá trên Tree" << endl;
+  cout << "Test 10: Đếm số node lá trên Tree" << endl;
   cout << "Test số lượng node lá = " << demNodeLa(t) << endl;
 
-  cout << "Test 8: In nhánh của node: " << layGiaTriNgauNhien(t) << endl;
+  cout << "Test 11: In nhánh của node: " << layGiaTriNgauNhien(t) << endl;
   inNhanhNode(t, layGiaTriNgauNhien(t));
 
   return 0;
