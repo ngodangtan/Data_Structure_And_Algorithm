@@ -76,6 +76,33 @@ void LNR(Tree t) {
     p = p->pRight;
   }
 }
+
+/* 2. Hàm khởi tạo data cho Tree
+Input:
+  + Tree& t;
+Output:
+  + return int
+ */
+
+int initDataTree(Tree& t) {
+  Node* p1 = initNode(50);
+  Node* p2 = initNode(26);
+  Node* p3 = initNode(73);
+  Node* p4 = initNode(66);
+  Node* p5 = initNode(88);
+  Node* p6 = initNode(61);
+
+  addNode(t , p1);
+  addNode(t , p2);
+  addNode(t , p3);
+  addNode(t , p4);
+  addNode(t , p5);
+  addNode(t , p6);
+
+  addValue(t, 30);
+  return 7;
+}
+
 /* 3. Tim Gia Tri
 Input:
   + Tree t;
@@ -97,25 +124,6 @@ bool timGiaTri(Tree t, int value) {
     }
   }
   return false;
-}
-
-int initDataTree(Tree& t) {
-  Node* p1 = initNode(50);
-  Node* p2 = initNode(26);
-  Node* p3 = initNode(73);
-  Node* p4 = initNode(66);
-  Node* p5 = initNode(88);
-  Node* p6 = initNode(61);
-
-  addNode(t , p1);
-  addNode(t , p2);
-  addNode(t , p3);
-  addNode(t , p4);
-  addNode(t , p5);
-  addNode(t , p6);
-
-  addValue(t, 30);
-  return 7;
 }
 
 /* 4. Viet ham tinh tong cac gia tri trong cay
@@ -161,14 +169,6 @@ void LNR_La(Tree t) {
     p = p->pRight;
   }
 }
-
-/* 3. Tim Gia Tri
-Input:
-  + Tree t;
-  + int value
-Output:
-  + return bool
- */
 
 int main() {
   Tree t;
