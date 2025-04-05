@@ -3,10 +3,10 @@
 3	414	1740210945854449125	CMakeFiles/Data_Structure_And_Algorithm.dir/main.cpp.o	53aec21c18b2ceb3
 4	466	1741610906134744207	CMakeFiles/Data_Structure_And_Algorithm.dir/Code_Qua_Trinh/Buoi04_10_03/DemoList2.cpp.o	50a6cefb12cb91d4
 3	500	1742215878261214620	CMakeFiles/Data_Structure_And_Algorithm.dir/Code_Qua_Trinh/Buoi05_17_03/DemoStack.cpp.o	f5f1b54abb74973a
+3	462	1740826667300146456	CMakeFiles/Data_Structure_And_Algorithm.dir/Code_Qua_Trinh/Buoi02_24_02_List/DemoList_V1.cpp.o	a4e8e42b0ed30ca6
 3	671	1742821331704731995	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi05/Test02.cpp.o	89439fa5a4342d35
 2	431	1743216441533330450	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi06/Test03.cpp.o	5637af1ce4214ef4
 4	584	1742825317483745561	CMakeFiles/Data_Structure_And_Algorithm.dir/Code_Qua_Trinh/Buoi06_24_03/DemoHashTableV2_4Steps.cpp.o	1464325e7fd63538
-3	462	1740826667300146456	CMakeFiles/Data_Structure_And_Algorithm.dir/Code_Qua_Trinh/Buoi02_24_02_List/DemoList_V1.cpp.o	a4e8e42b0ed30ca6
 4	461	1742031526716233212	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi04/Buoi04.cpp.o	b29a166cdaf1d1a1
 2	424	1740225613604968173	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi01/Bai_02.cpp.o	a7bb25549c8582fa
 1	622	1741788940078145755	CMakeFiles/Data_Structure_And_Algorithm.dir/Code_Qua_Trinh/Buoi04_10_03/DemoQueue.cpp.o	35b99a06f7cfd159
@@ -16,7 +16,7 @@
 3	461	1740837474682750259	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi02/Bai_tap_buoi02.cpp.o	d78121ae9e807e87
 4	454	1741612565775849471	CMakeFiles/Data_Structure_And_Algorithm.dir/Code_Qua_Trinh/Buoi04_10_03/QLSV_List2.cpp.o	4c29d43da1a8c3b3
 5	520	1741186438014689573	CMakeFiles/Data_Structure_And_Algorithm.dir/Code_Qua_Trinh/Buoi03_03_03/List_QLSV.cpp.o	ca42bab33f29344c
-7	86	1743858003000878148	build.ninja	a7001285c28b4d6a
+7	86	1743858537389597465	build.ninja	a7001285c28b4d6a
 11	60	1743857893531905532	Data_Structure_And_Algorithm	535abbac20d40bf
 1	469	1742821362414820240	CMakeFiles/Data_Structure_And_Algorithm.dir/Code_Qua_Trinh/Buoi06_24_03/DemoHashtable.cpp.o	d07509708e9f9036
 4	488	1743214094330369494	CMakeFiles/Data_Structure_And_Algorithm.dir/Bai_tap/Buoi06/HashTable_SoThuc.cpp.o	2b0c32bdacec7994

@@ -49,12 +49,15 @@ void addNode(Tree& tree, Node* p) {
       pGoto = pGoto->pLeft;
     } else if (p->data > pLoca->data) {
       pGoto = pGoto->pRight;
+    } else {
+      delete p;
+      return;
     }
   }
 
   if(p->data < pLoca->data) {
     pLoca->pLeft = p;
-  } else if (p->data > pLoca->data) {
+  } else {
     pLoca->pRight = p;
   }
 }
@@ -71,15 +74,104 @@ Input:
 Output:
   + return int
  */
-
 void initDataTree(Tree& t) {
-  int soLuong = rand() % (20 - 10) + 10;
+  int soLuong = rand() % (60 - 50) + 50;
   for (int i = 0; i < soLuong; i++) {
-    float value = rand() % (68 + 38) - 38;
+    float value = rand() % (723 - 512) + 512;
     addValue(t, value);
   }
 }
 
+// Hàm in LNR
+void LNR(Tree t) {
+  stack<Node*> s;
+  Node* p = t.pRoot;
+  while (p!=NULL || s.empty() == false) {
+    while (p != NULL) {
+      s.push(p);
+      p = p->pLeft;
+    }
+    p = s.top();
+    s.pop();
+    cout << "Data: " << p->data << " | Left: " << p->pLeft << " | Right: " << p->pRight << " | Current: " << p << endl;
+    p = p->pRight;
+  }
+}
+
+// Hàm in NLR
+void NLR(Tree t) {
+  stack<Node*> s;
+  Node* p = t.pRoot;
+
+  while (p != NULL || s.empty() == false) {
+    while (p != NULL) {
+      cout << "Data: " << p->data << " | Left: " << p->pLeft << " | Right: " << p->pRight << " | Current: " << p << endl;
+      s.push(p);
+      p = p->pLeft;
+    }
+
+    p = s.top();
+    s.pop();
+    p = p->pRight;
+  }
+}
+
+// Hàm in LRN
+void LRN(Tree t) {
+  stack<Node*> s;
+  Node* p = t.pRoot;
+  Node* lastVisited = NULL;
+
+  while (p != NULL || s.empty() == false) {
+    while (p != NULL) {
+      s.push(p);
+      p = p->pLeft;
+    }
+
+    p = s.top();
+    if (p->pRight == NULL || p->pRight == lastVisited) {
+      cout << "Data: " << p->data << " | Left: " << p->pLeft << " | Right: " << p->pRight << " | Current: " << p << endl;
+      s.pop();
+      lastVisited = p;
+      p = NULL;
+    } else {
+      p = p->pRight;
+    }
+  }
+}
+
+// Hàm tạo Tree từ mảng n phần tử
+void createTreeFromArray(Tree& tree, float arr[], int n) {
+  for (int i = 0; i < n; i++) {
+    addValue(tree, arr[i]);
+  }
+}
+
 int main() {
+  srand(time(0));
+  Tree t;
+  initTree(t);
+  cout << "Test: 1->6 Tao du lieu cho cay: " << endl;
+  
+  // Ví dụ sử dụng hàm tạo cây từ mảng
+  float arr[] = {10.5, 20.3, 15.7, 8.2, 25.1, 12.4};
+  int n = sizeof(arr) / sizeof(arr[0]);
+  createTreeFromArray(t, arr, n);
+  
+  cout << endl;
+  cout << "Test 4: In cay theo LNR: " << endl;
+  LNR(t);
+  cout << endl;
+
+  cout << endl;
+  cout << "Test 4: In cay theo NLR: " << endl;
+  NLR(t);
+  cout << endl;
+
+  cout << endl;
+  cout << "Test 4: In cay theo LRN: " << endl;
+  LRN(t);
+  cout << endl;
+  
   return 0;
 }

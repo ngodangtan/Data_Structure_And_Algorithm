@@ -139,7 +139,14 @@ void initDataTree(Tree& t) {
   }
 }
 
-/* 3. Tim Gia Tri
+// Hàm tạo Tree từ mảng n phần tử
+void createTreeFromArray(Tree& tree, float arr[], int n) {
+  for (int i = 0; i < n; i++) {
+    addValue(tree, arr[i]);
+  }
+}
+
+/* Tìm giá trị có trong Tree
 Input:
   + Tree t;
   + int value
