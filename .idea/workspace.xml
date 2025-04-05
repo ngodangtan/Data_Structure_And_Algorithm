@@ -31,6 +31,7 @@
   <component name="ChangeListManager">
     <list default="true" id="98563005-dcc5-40eb-9bdb-2752c4935ff0" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai_tap/Buoi07/TreeFloat.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Bai_tap/Buoi07/TreeFloat.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Data_Structure_And_Algorithm" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Data_Structure_And_Algorithm" afterDir="false" />
@@ -59,6 +60,7 @@
     <setting file="file://$PROJECT_DIR$/Code_Qua_Trinh/Buoi04_10_03/QLSV_List2.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Code_Qua_Trinh/Buoi05_17_03/DemoStack.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Code_Qua_Trinh/Buoi06_24_03/DemoHashTableV2_4Steps.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Code_Qua_Trinh/Buoi07_31_03/DemoTree.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Code_Qua_Trinh/OnThi/OnThi_SinglyLinkedList.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
@@ -89,7 +91,7 @@
     &quot;RunOnceActivity.west.config.association.type.startup.service&quot;: &quot;true&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Buoi__07__Qua__Trinh&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;BaiTap/Buoi07&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/felixngo/Data_Structure_And_Algorithm&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -106,6 +108,11 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Data_Structure_And_Algorithm" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Data_Structure_And_Algorithm" TARGET_NAME="Data_Structure_And_Algorithm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Data_Structure_And_Algorithm" RUN_TARGET_NAME="Data_Structure_And_Algorithm">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -144,6 +151,8 @@
       <workItem from="1743819018569" duration="2509000" />
       <workItem from="1743821590810" duration="81000" />
       <workItem from="1743821683172" duration="6000" />
+      <workItem from="1743837823100" duration="4783000" />
+      <workItem from="1743854024090" duration="1462000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />

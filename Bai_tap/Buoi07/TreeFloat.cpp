@@ -134,6 +134,175 @@ void initDataTree(Tree& t) {
   }
 }
 
+/* 3. Tim Gia Tri
+Input:
+  + Tree t;
+  + int value
+Output:
+  + return bool
+ */
+bool timGiaTri(Tree t, float value) {
+  Node* p = t.pRoot;
+  while (p != NULL) {
+    if (p->data == value) {
+      return true;
+    }
+
+    if (value < p->data) {
+      p = p->pLeft;
+    } else if (value > p->data) {
+      p = p->pRight;
+    }
+  }
+  return false;
+}
+
+/* 4. Đếm số node trên cây
+Input:
+  + Tree t
+Output:
+  + return int
+*/
+int demNode(Tree t) {
+  stack<Node*> s;
+  Node* p = t.pRoot;
+  int count = 0;
+  
+  while (p != NULL || !s.empty()) {
+    while (p != NULL) {
+      s.push(p);
+      p = p->pLeft;
+    }
+    
+    p = s.top();
+    s.pop();
+    count++;
+    p = p->pRight;
+  }
+  
+  return count;
+}
+
+/* 5. Đếm số node lá trên Tree
+Input:
+  + Tree t
+Output:
+  + return int
+*/
+int demNodeLa(Tree t) {
+  stack<Node*> s;
+  Node* p = t.pRoot;
+  int count = 0;
+  
+  while (p != NULL || !s.empty()) {
+    while (p != NULL) {
+      s.push(p);
+      p = p->pLeft;
+    }
+    
+    p = s.top();
+    s.pop();
+    
+    if (p->pLeft == NULL && p->pRight == NULL) {
+      count++;
+    }
+    
+    p = p->pRight;
+  }
+  
+  return count;
+}
+
+// 6. In ra nhánh của một node
+void inNhanhNode(Tree t, float value) {
+  stack<Node*> s;
+  stack<Node*> path;
+  Node* p = t.pRoot;
+  bool found = false;
+  
+  while (p != NULL || !s.empty()) {
+    while (p != NULL) {
+      s.push(p);
+      path.push(p);
+      
+      if (p->data == value) {
+        found = true;
+        break;
+      }
+      
+      p = p->pLeft;
+    }
+    
+    if (found) break;
+    
+    p = s.top();
+    s.pop();
+    
+    if (!path.empty() && path.top() == p) {
+      path.pop();
+    }
+    
+    p = p->pRight;
+  }
+  
+  if (found) {
+    cout << "Duong di tu goc den node " << value << ": ";
+    stack<Node*> temp;
+    
+    while (!path.empty()) {
+      temp.push(path.top());
+      path.pop();
+    }
+    
+    while (!temp.empty()) {
+      cout << temp.top()->data;
+      temp.pop();
+      if (!temp.empty()) {
+        cout << " -> ";
+      }
+    }
+    cout << endl;
+  } else {
+    cout << "Khong tim thay node co gia tri " << value << endl;
+  }
+}
+
+/* Hàm lấy một giá trị ngẫu nhiên có trong Tree
++ Input: Tree t
++Output: return float
+ */
+float layGiaTriNgauNhien(Tree t) {
+  int soNode = demNode(t);
+  if (soNode == 0) {
+    return 0;
+  }
+
+  int viTri = rand() % soNode;
+  int dem = 0;
+  
+  stack<Node*> s;
+  Node* p = t.pRoot;
+  
+  while (p != NULL || !s.empty()) {
+    while (p != NULL) {
+      s.push(p);
+      p = p->pLeft;
+    }
+    
+    p = s.top();
+    s.pop();
+    
+    if (dem == viTri) {
+      return p->data;
+    }
+    
+    dem++;
+    p = p->pRight;
+  }
+  
+  return 0;
+}
+
 int main() {
   srand(time(0));
   Tree t;
@@ -141,17 +310,31 @@ int main() {
   cout << "Test: 1. Tao du lieu cho cay: " << endl;
   initDataTree(t);
 
-  cout << "Test 2: In cay theo LNR (In-order): " << endl;
+  cout << "Test 2: In cay theo LNR: " << endl;
   LNR(t);
   cout << endl;
 
-  cout << "Test 3: In cay theo NLR (Pre-order): " << endl;
+  cout << "Test 3: In cay theo NLR: " << endl;
   NLR(t);
   cout << endl;
 
-  cout << "Test 4: In cay theo LRN (Post-order): " << endl;
+  cout << "Test 4: In cay theo LRN: " << endl;
   LRN(t);
   cout << endl;
-  
+
+  cout << "Test 5: Tìm giá trị có trong Tree" << endl;
+  cout << "Test tim gia tri 10 = " << timGiaTri(t, 10) << endl;
+  cout << "Test tim gia tri 36 = " << timGiaTri(t, 36) << endl;
+
+  cout << endl;
+  cout << "Test 6: Đếm số node trên Tree" << endl;
+  cout << "Test số lượng node = " << demNode(t) << endl;
+
+  cout << "Test 7: Đếm số node lá trên Tree" << endl;
+  cout << "Test số lượng node lá = " << demNodeLa(t) << endl;
+
+  cout << "Test 8: In nhánh của node: " << layGiaTriNgauNhien(t) << endl;
+  inNhanhNode(t, layGiaTriNgauNhien(t));
+
   return 0;
 }
