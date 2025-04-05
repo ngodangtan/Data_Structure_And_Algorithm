@@ -448,7 +448,7 @@ int main() {
   srand(time(0));
   Tree t;
   initTree(t);
-  cout << "Test: 1->6 Tao du lieu cho cay: " << endl;
+  cout << "Test: 1->6 Tạo dữ liệu cho Tree: " << endl;
   initDataTree(t);
 
   cout << endl;

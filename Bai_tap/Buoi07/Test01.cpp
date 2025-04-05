@@ -147,11 +147,34 @@ void createTreeFromArray(Tree& tree, float arr[], int n) {
   }
 }
 
+/* Tìm giá trị có trong Tree
+Input:
+  + Tree t;
+  + float value
+Output:
+  + return Node* (địa chỉ của Node nếu tìm thấy, NULL nếu không tìm thấy)
+ */
+Node* timNode(Tree t, float value) {
+  Node* p = t.pRoot;
+  while (p != NULL) {
+    if (p->data == value) {
+      return p;
+    }
+
+    if (value < p->data) {
+      p = p->pLeft;
+    } else if (value > p->data) {
+      p = p->pRight;
+    }
+  }
+  return NULL;
+}
+
 int main() {
   srand(time(0));
   Tree t;
   initTree(t);
-  cout << "Test: 1->6 Tao du lieu cho cay: " << endl;
+  cout << "Test: Tạo dữ liệu cho Tree " << endl;
   
   // Ví dụ sử dụng hàm tạo cây từ mảng
   float arr[] = {10.5, 20.3, 15.7, 8.2, 25.1, 12.4};
@@ -172,6 +195,15 @@ int main() {
   cout << "Test 4: In cay theo LRN: " << endl;
   LRN(t);
   cout << endl;
+
+  cout << "Test 5: Tìm giá trị " << endl;
+  float searchValue = 15.7;
+  Node* foundNode = timNode(t, searchValue);
+  if (foundNode != NULL) {
+    cout << "Tìm thấy giá trị: " << searchValue << " tại địa chỉ: " << foundNode << endl;
+  } else {
+    cout << "Không tìm thấy giá trị " << searchValue << endl;
+  }
   
   return 0;
 }
