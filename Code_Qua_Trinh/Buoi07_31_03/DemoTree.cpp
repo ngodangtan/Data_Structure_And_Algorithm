@@ -144,13 +144,26 @@ int tong(Tree t) {
   return tg;
 }
 
-/* 3. Tim Gia Tri
-Input:
-  + Tree t;
-  + int value
-Output:
-  + return bool
+/* 5. In Node la
+
  */
+
+void LNR_La(Tree t) {
+  stack<Node*> s;
+  Node* p = t.pRoot;
+  while (p!=NULL || s.empty() == false) {
+    while (p != NULL) {
+      s.push(p);
+      p = p->pLeft;
+    }
+    p = s.top();
+    s.pop();
+    if (p->pLeft == NULL && p->pRight == NULL) {
+      cout << p->data << " ";
+    }
+    p = p->pRight;
+  }
+}
 
 /* 3. Tim Gia Tri
 Input:
@@ -175,7 +188,8 @@ int main() {
   cout << "\t+ Ket qua tim 66(1) = " << timGiaTri(t, 66) << endl;
 
   cout << "\nTest 4: Ket qua tinh tong " << tong(t) << endl;
-  cout << "\nTest: :" << endl;
+  cout << "\nTest 5: Test in la :" << endl;
+  LNR_La(t);
   cout << "\nTest: :" << endl;
   cout << "\nTest: :" << endl;
   return 0;
