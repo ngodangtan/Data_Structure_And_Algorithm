@@ -144,10 +144,7 @@ int tong(Tree t) {
   return tg;
 }
 
-/* 5. In Node la
-
- */
-
+// 5. In Node la
 void LNR_La(Tree t) {
   stack<Node*> s;
   Node* p = t.pRoot;
