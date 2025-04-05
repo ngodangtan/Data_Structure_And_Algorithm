@@ -67,6 +67,7 @@ void addValue(Tree& tree, float value) {
   addNode(tree, p);
 }
 
+// Hàm in LNR
 void LNR(Tree t) {
   stack<Node*> s;
   Node* p = t.pRoot;
@@ -82,13 +83,14 @@ void LNR(Tree t) {
   }
 }
 
+// Hàm in NLR
 void NLR(Tree t) {
   stack<Node*> s;
   Node* p = t.pRoot;
   
   while (p != NULL || s.empty() == false) {
     while (p != NULL) {
-      cout << p->data << " ";  // In ra giá trị node gốc trước
+      cout << p->data << " ";
       s.push(p);
       p = p->pLeft;
     }
@@ -99,6 +101,7 @@ void NLR(Tree t) {
   }
 }
 
+// Hàm in LRN
 void LRN(Tree t) {
   stack<Node*> s;
   Node* p = t.pRoot;
@@ -112,7 +115,7 @@ void LRN(Tree t) {
     
     p = s.top();
     if (p->pRight == NULL || p->pRight == lastVisited) {
-      cout << p->data << " ";  // In ra giá trị node sau khi đã duyệt cả hai cây con
+      cout << p->data << " ";
       s.pop();
       lastVisited = p;
       p = NULL;
@@ -236,8 +239,10 @@ void inNhanhNode(Tree t, float value) {
       p = p->pLeft;
     }
     
-    if (found) break;
-    
+    if (found) {
+      break;
+    }
+
     p = s.top();
     s.pop();
     
@@ -249,7 +254,7 @@ void inNhanhNode(Tree t, float value) {
   }
   
   if (found) {
-    cout << "Duong di tu goc den node " << value << ": ";
+    cout << "Nhánh của Node " << value << ": ";
     stack<Node*> temp;
     
     while (!path.empty()) {
@@ -271,8 +276,10 @@ void inNhanhNode(Tree t, float value) {
 }
 
 /* Hàm lấy một giá trị ngẫu nhiên có trong Tree
-+ Input: Tree t
-+Output: return float
++ Input:
+    Tree t
++Output:
+    return float
  */
 float layGiaTriNgauNhien(Tree t) {
   int soNode = demNode(t);
@@ -337,6 +344,100 @@ int demNodeNhoHonX(Tree t, float x) {
   return count;
 }
 
+/* Hàm tính tổng giá trị các node trong Tree
+Input:
+  + Tree t
+Output:
+  + return float
+*/
+float tinhTongNode(Tree t) {
+  stack<Node*> s;
+  Node* p = t.pRoot;
+  float sum = 0;
+  
+  while (p != NULL || s.empty() == false) {
+    while (p != NULL) {
+      s.push(p);
+      p = p->pLeft;
+    }
+    p = s.top();
+    s.pop();
+    
+    sum += p->data;
+    
+    p = p->pRight;
+  }
+  
+  return sum;
+}
+
+/* Hàm tính tổng giá trị các node chẵn trong Tree
+Input:
+  + Tree t
+Output:
+  + return float
+*/
+float tinhTongNodeChan(Tree t) {
+  stack<Node*> s;
+  Node* p = t.pRoot;
+  float sum = 0;
+  
+  while (p != NULL || s.empty() == false) {
+    while (p != NULL) {
+      s.push(p);
+      p = p->pLeft;
+    }
+    
+    p = s.top();
+    s.pop();
+    
+    if ((int)p->data % 2 == 0) {
+      sum += p->data;
+    }
+    
+    p = p->pRight;
+  }
+  
+  return sum;
+}
+
+/* Hàm tìm giá trị lớn nhất và nhỏ nhất trong Tree
+Input:
+  + Tree t
+  + float& min
+  + float& max
+*/
+void timMinMax(Tree t, float& min, float& max) {
+  if (t.pRoot == NULL) {
+    min = max = 0;
+    return;
+  }
+
+  stack<Node*> s;
+  Node* p = t.pRoot;
+  
+  min = max = p->data;
+  
+  while (p != NULL || s.empty() == false) {
+    while (p != NULL) {
+      s.push(p);
+      p = p->pLeft;
+    }
+    
+    p = s.top();
+    s.pop();
+    
+    if (p->data < min) {
+      min = p->data;
+    }
+    if (p->data > max) {
+      max = p->data;
+    }
+    
+    p = p->pRight;
+  }
+}
+
 int main() {
   srand(time(0));
   Tree t;
@@ -344,34 +445,57 @@ int main() {
   cout << "Test: 1->6 Tao du lieu cho cay: " << endl;
   initDataTree(t);
 
+  cout << endl;
   cout << "Test 7: In cay theo LNR: " << endl;
   LNR(t);
   cout << endl;
 
+  cout << endl;
   cout << "Test 7: In cay theo NLR: " << endl;
   NLR(t);
   cout << endl;
 
+  cout << endl;
   cout << "Test 7: In cay theo LRN: " << endl;
   LRN(t);
   cout << endl;
 
+  cout << endl;
   cout << "Test 8: Tìm giá trị có trong Tree" << endl;
   cout << "Test tim gia tri 10 = " << timGiaTri(t, 10) << endl;
   cout << "Test tim gia tri 36 = " << timGiaTri(t, 36) << endl;
+  cout << "Test tim gia tri: " << layGiaTriNgauNhien(t) << " (1) "<< timGiaTri(t, layGiaTriNgauNhien(t)) << endl;
 
   cout << endl;
   cout << "Test 9: Đếm số node trên Tree" << endl;
   cout << "Test số lượng node = " << demNode(t) << endl;
 
+  cout << endl;
   cout << "Test 10: Đếm số node lá trên Tree" << endl;
   cout << "Test số lượng node lá = " << demNodeLa(t) << endl;
 
+  cout << endl;
   cout << "Test 11: In nhánh của node: " << layGiaTriNgauNhien(t) << endl;
   inNhanhNode(t, layGiaTriNgauNhien(t));
 
+  cout << endl;
   cout << "Test 12: Đếm số node nhỏ hơn 0" << endl;
   cout << "So luong node nho hon 0: " << demNodeNhoHonX(t, 0) << endl;
+
+  cout << endl;
+  cout << "Test 13: Tính tổng giá trị các node" << endl;
+  cout << "Tong gia tri cac node: " << tinhTongNode(t) << endl;
+
+  cout << endl;
+  cout << "Test 14: Tính tổng giá trị các node chẵn" << endl;
+  cout << "Tong gia tri cac node chan: " << tinhTongNodeChan(t) << endl;
+
+  cout << endl;
+  cout << "Test 15: Tìm giá trị lớn nhất và nhỏ nhất" << endl;
+  float min, max;
+  timMinMax(t, min, max);
+  cout << "Gia tri nho nhat: " << min << endl;
+  cout << "Gia tri lon nhat: " << max << endl;
   
   return 0;
 }
