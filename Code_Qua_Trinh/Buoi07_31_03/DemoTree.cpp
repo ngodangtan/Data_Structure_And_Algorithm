@@ -76,18 +76,36 @@ void LNR(Tree t) {
     p = p->pRight;
   }
 }
+/* 3. Tim Gia Tri
+Input:
+  + Tree t;
+  + int value
+Output:
+  + return bool
+ */
+bool timGiaTri(Tree t, int value) {
+  Node* p = t.pRoot;
+  while (p != NULL) {
+    if (p->data == value) {
+      return true;
+    }
 
-int main() {
+    if (value < p->data) {
+      p = p->pLeft;
+    } else if (value > p->data) {
+      p = p->pRight;
+    }
+  }
+  return false;
+}
 
+int initDataTree(Tree& t) {
   Node* p1 = initNode(50);
   Node* p2 = initNode(26);
   Node* p3 = initNode(73);
   Node* p4 = initNode(66);
   Node* p5 = initNode(88);
   Node* p6 = initNode(61);
-
-  Tree t;
-  initTree(t);
 
   addNode(t , p1);
   addNode(t , p2);
@@ -97,7 +115,68 @@ int main() {
   addNode(t , p6);
 
   addValue(t, 30);
+  return 7;
+}
 
+/* 4. Viet ham tinh tong cac gia tri trong cay
+Input:
+  + Tree t;
+Output:
+  + return tong
+ */
+
+int tong(Tree t) {
+  int tg = 0;
+  stack<Node*> s;
+  Node* p = t.pRoot;
+  while (p!=NULL || s.empty() == false) {
+    while (p != NULL) {
+      s.push(p);
+      p = p->pLeft;
+    }
+    p = s.top();
+    s.pop();
+
+    tg = tg + p->data;
+
+    p = p->pRight;
+  }
+  return tg;
+}
+
+/* 3. Tim Gia Tri
+Input:
+  + Tree t;
+  + int value
+Output:
+  + return bool
+ */
+
+/* 3. Tim Gia Tri
+Input:
+  + Tree t;
+  + int value
+Output:
+  + return bool
+ */
+
+int main() {
+  Tree t;
+  initTree(t);
+  cout << "Test: 1. Tao du lieu cho cay: " << endl;
+  int soLuong = initDataTree(t);
+  cout << "\t+ Ket qua: " << soLuong << " gia tri" << endl;
+
+  cout << "Test 2: In cay" << endl;
   LNR(t);
+
+  cout << "\nTest 3: Tim kiem" << endl;
+  cout << "\t+ Ket qua tim 10(0) = " << timGiaTri(t, 10) << endl;
+  cout << "\t+ Ket qua tim 66(1) = " << timGiaTri(t, 66) << endl;
+
+  cout << "\nTest 4: Ket qua tinh tong " << tong(t) << endl;
+  cout << "\nTest: :" << endl;
+  cout << "\nTest: :" << endl;
+  cout << "\nTest: :" << endl;
   return 0;
 }
