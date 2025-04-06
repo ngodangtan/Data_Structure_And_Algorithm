@@ -34,7 +34,7 @@ void initTree(Tree& t) {
   t.pRoot = NULL;
 }
 
-// Viết hàm chén Node vào Tree
+// Hàm chén Node vào Tree
 void addNode(Tree& tree, Node* p) {
   if (tree.pRoot == NULL) {
     tree.pRoot = p;
