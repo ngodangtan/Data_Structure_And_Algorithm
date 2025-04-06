@@ -170,6 +170,32 @@ Node* timNode(Tree t, float value) {
   return NULL;
 }
 
+/* Đếm số node trên cây
+Input:
+  + Tree t
+Output:
+  + return int
+*/
+int demNode(Tree t) {
+  stack<Node*> s;
+  Node* p = t.pRoot;
+  int count = 0;
+
+  while (p != NULL || s.empty() == false) {
+    while (p != NULL) {
+      s.push(p);
+      p = p->pLeft;
+    }
+
+    p = s.top();
+    s.pop();
+    count++;
+    p = p->pRight;
+  }
+
+  return count;
+}
+
 int main() {
   srand(time(0));
   Tree t;
@@ -204,6 +230,10 @@ int main() {
   } else {
     cout << "Không tìm thấy giá trị " << searchValue << endl;
   }
+
+  cout << endl;
+  cout << "Test 6: Đếm số node trên Tree" << endl;
+  cout << "Test số lượng node = " << demNode(t) << endl;
   
   return 0;
 }
