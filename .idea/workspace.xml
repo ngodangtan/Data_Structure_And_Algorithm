@@ -29,12 +29,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98563005-dcc5-40eb-9bdb-2752c4935ff0" name="Changes" comment="update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bai_tap/Buoi07/Test01.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Bai_tap/Buoi07/Test01.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bai_tap/Buoi07/TreeFloat.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Bai_tap/Buoi07/TreeFloat.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test01" beforeDir="false" afterPath="$PROJECT_DIR$/Test01" afterDir="false" />
-    </list>
+    <list default="true" id="98563005-dcc5-40eb-9bdb-2752c4935ff0" name="Changes" comment="update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +87,7 @@
     "RunOnceActivity.west.config.association.type.startup.service": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "BaiTap/Buoi07",
+    "git-widget-placeholder": "bo__sung__tai__lieu",
     "last_opened_file_path": "/Users/felixngo/Data_Structure_And_Algorithm",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -111,11 +106,6 @@
   </component>
   <component name="RunManager" selected="C/C++ File.Test01.cpp">
     <configuration name="Data_Structure_And_Algorithm" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Data_Structure_And_Algorithm" TARGET_NAME="Data_Structure_And_Algorithm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Data_Structure_And_Algorithm" RUN_TARGET_NAME="Data_Structure_And_Algorithm">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
