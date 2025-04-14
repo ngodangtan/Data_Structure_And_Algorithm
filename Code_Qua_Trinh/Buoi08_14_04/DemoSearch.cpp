@@ -63,6 +63,13 @@ int* binarySearch2(int *a, int n , int value) {
   return NULL;
 }
 
+/* Viết hàm nhập giá trị tự động cho mảng, các giá trị thuộc [100;999],
+số lượng phần tử thuộc [30;50]
+ */
+void initDataAuto(int a[], int& n) {
+
+}
+
 int main() {
   int a[] = {10, 9, 5 , 6, 7, 8, 4};
   int n = 6;
@@ -77,5 +84,9 @@ int main() {
   cout << "Test: Binary Search" << endl;
   cout << "Ket qua tim 8(.): " << binarySearch(b, m, 36) << endl;
   cout << "Ket qua tim 4(.: " << binarySearch(b, m, 40) << endl;
+
+  cout << "Test: Binary Search2" << endl;
+  cout << "Ket qua tim 8(.): " << binarySearch2(b, m, 36) << endl;
+  cout << "Ket qua tim 4(.: " << binarySearch2(b, m, 40) << endl;
   return 0;
 }
