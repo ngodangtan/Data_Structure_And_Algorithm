@@ -30,13 +30,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98563005-dcc5-40eb-9bdb-2752c4935ff0" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/Code_Qua_Trinh/Buoi09_21_04/DemoSort.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code_Qua_Trinh/Buoi09_21_04/BaiTap.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test01" beforeDir="false" afterPath="$PROJECT_DIR$/Test01" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_Qua_Trinh/Buoi09_21_04/DemoSort.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Code_Qua_Trinh/Buoi09_21_04/DemoSort.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +60,7 @@
     <setting file="file://$PROJECT_DIR$/Code_Qua_Trinh/Buoi05_17_03/DemoStack.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Code_Qua_Trinh/Buoi06_24_03/DemoHashTableV2_4Steps.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Code_Qua_Trinh/Buoi07_31_03/DemoTree.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Code_Qua_Trinh/Buoi09_21_04/DemoSort.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Code_Qua_Trinh/OnThi/OnThi_SinglyLinkedList.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
@@ -119,7 +116,7 @@
       </method>
     </configuration>
     <configuration name="Test01.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Data_Structure_And_Algorithm" TARGET_NAME="Test01.cpp" CONFIG_NAME="Test01.cpp">
-      <option name="sourceFile" value="Code_Qua_Trinh/Buoi09_21_04/DemoSort.cpp" />
+      <option name="sourceFile" value="Code_Qua_Trinh/Buoi09_21_04/BaiTap.cpp" />
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
       </method>
@@ -176,7 +173,7 @@
       <workItem from="1744980205916" duration="124000" />
       <workItem from="1745023992686" duration="1843000" />
       <workItem from="1745112054413" duration="2004000" />
-      <workItem from="1745413661622" duration="1048000" />
+      <workItem from="1745413661622" duration="2237000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -354,7 +351,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743860263589</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="update">
+      <option name="closed" value="true" />
+      <created>1745414758745</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1745414758745</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
